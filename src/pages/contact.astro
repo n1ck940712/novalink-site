@@ -1,0 +1,48 @@
+---
+import ContactWhatsAppCTA from '../components/ContactWhatsAppCTA.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<MainLayout
+  title="Contact"
+  description="Contact NovaLink to discuss SME growth strategy, digital enablement, and onboarding support."
+>
+  <section class="container-shell pt-14">
+    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Contact NovaLink</h1>
+    <p class="mt-4 max-w-3xl text-base text-slate-600">
+      Share your business priorities and timeline. We will follow up with a practical next-step recommendation.
+    </p>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="grid gap-5 md:grid-cols-3">
+      <article class="panel p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-700">Email</p>
+        <a class="mt-3 block text-sm font-medium text-slate-900 hover:text-brand-800" href={`mailto:${siteConfig.email}`}>
+          {siteConfig.email}
+        </a>
+      </article>
+      <article class="panel p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-700">WhatsApp</p>
+        <a
+          class="mt-3 block text-sm font-medium text-slate-900 hover:text-brand-800"
+          href={`https://wa.me/${siteConfig.phoneE164}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {siteConfig.phoneDisplay}
+        </a>
+      </article>
+      <article class="panel p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-700">Location</p>
+        <p class="mt-3 text-sm font-medium text-slate-900">{siteConfig.city}</p>
+      </article>
+    </div>
+  </section>
+
+  <ContactWhatsAppCTA
+    heading="Ready to start?"
+    description="Briefly describe your challenge, business type, and current tools. We will reply with a focused scope recommendation."
+  />
+</MainLayout>

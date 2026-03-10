@@ -1,0 +1,64 @@
+---
+import { navigationLinks } from '../content/site-data';
+import { siteConfig } from '../config/site';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+const isActive = (href: string) =>
+  currentPath === href || (href !== '/' && currentPath.startsWith(`${href}/`));
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/90 backdrop-blur">
+  <div class="container-shell py-4">
+    <div class="flex items-center justify-between gap-4">
+      <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-900">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">NL</span>
+        {siteConfig.name}
+      </a>
+
+      <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
+        {navigationLinks.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class={`rounded-full px-4 py-2 text-sm font-medium transition ${
+              isActive(link.href)
+                ? 'bg-brand-100 text-brand-800'
+                : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a href="/contact" class="btn-primary text-sm">Book a Call</a>
+      </nav>
+
+      <details class="group md:hidden">
+        <summary class="inline-flex cursor-pointer list-none items-center rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-800">
+          Menu
+        </summary>
+        <div class="absolute right-4 top-[4.5rem] w-64 rounded-2xl border border-slate-200 bg-white p-3 shadow-lg">
+          <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
+            {navigationLinks.map((link) => (
+              <a
+                href={link.href}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+                class={`rounded-xl px-3 py-2 text-sm font-medium ${
+                  isActive(link.href)
+                    ? 'bg-brand-100 text-brand-800'
+                    : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a href="/contact" class="btn-primary mt-2 text-center text-sm">Book a Call</a>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,49 @@
+---
+import CTASection from '../components/CTASection.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="About"
+  description="About NovaLink and how we support SME teams with practical digital growth and enablement work."
+>
+  <section class="container-shell pt-14">
+    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">About NovaLink</h1>
+    <p class="mt-4 max-w-3xl text-base text-slate-600">
+      NovaLink exists to help SMEs turn digital ambitions into practical execution. We focus on clear outcomes, strong collaboration, and plans that teams can sustain.
+    </p>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="grid gap-5 md:grid-cols-3">
+      <article class="panel p-6">
+        <h2 class="text-lg font-semibold text-slate-900">Mission</h2>
+        <p class="mt-3 text-sm text-slate-600">Support growing businesses with execution-first digital solutions that produce measurable momentum.</p>
+      </article>
+      <article class="panel p-6">
+        <h2 class="text-lg font-semibold text-slate-900">Operating Style</h2>
+        <p class="mt-3 text-sm text-slate-600">Lean, accountable, and transparent. We prioritize practical next steps over heavy process overhead.</p>
+      </article>
+      <article class="panel p-6">
+        <h2 class="text-lg font-semibold text-slate-900">Collaboration Model</h2>
+        <p class="mt-3 text-sm text-slate-600">We work closely with founders, commercial leads, and operations teams to keep execution aligned with business goals.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-xl font-semibold text-slate-900">What this site is designed for</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        This new website is structured as a maintainable repo-first foundation. Content sections are intentionally modular so business messaging can be refined quickly as offerings evolve.
+      </p>
+    </div>
+  </section>
+
+  <CTASection
+    title="Want to see if we are a fit?"
+    description="Tell us your current growth challenge and we can recommend a practical starting scope."
+    primaryLabel="Contact NovaLink"
+    primaryHref="/contact"
+  />
+</MainLayout>

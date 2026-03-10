@@ -1,0 +1,64 @@
+---
+import CTASection from '../components/CTASection.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import { atomeBenefits, atomeFAQs } from '../content/site-data';
+---
+
+<MainLayout
+  title="Atome"
+  description="Future dedicated Atome landing page scaffold with NovaLink as onboarding and support operator."
+>
+  <!-- TODO(BM-first copy): Replace hero and offer narrative with campaign-ready Bahasa Malaysia-first messaging once approved. -->
+  <section class="container-shell pt-14">
+    <div class="panel px-6 py-10 sm:px-10 sm:py-14">
+      <p class="inline-flex rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-800">Atome landing page placeholder</p>
+      <h1 class="mt-5 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
+        Atome trust anchor, NovaLink onboarding support
+      </h1>
+      <p class="mt-4 max-w-3xl text-base text-slate-600">
+        This page is intentionally structured for future campaign use. Position Atome as the recognized payment trust layer, while NovaLink handles merchant-facing onboarding coordination, enablement, and support.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Benefits Section Placeholder</h2>
+    <p class="mt-3 max-w-3xl text-base text-slate-600">
+      Keep this area concise and outcome-oriented so campaign copy can be swapped quickly.
+    </p>
+    <div class="mt-7 grid gap-5 md:grid-cols-3">
+      {atomeBenefits.map((benefit) => (
+        <article class="panel p-6">
+          <h3 class="text-lg font-semibold text-slate-900">{benefit.title}</h3>
+          <p class="mt-3 text-sm text-slate-600">{benefit.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel border-dashed p-6">
+      <h2 class="text-xl font-semibold text-slate-900">Offer & Proof Placeholder</h2>
+      <p class="mt-3 text-sm text-slate-600">
+        Insert campaign-specific offer details, eligibility notes, and social proof assets here.
+      </p>
+      <!-- TODO(BM-first copy): Add localized headline, objections-handling bullets, and CTA microcopy in BM. -->
+    </div>
+  </section>
+
+  <FAQAccordion
+    heading="Atome Landing FAQs"
+    intro="Starter FAQ structure for the dedicated Atome route. Replace with campaign-validated questions later."
+    items={atomeFAQs}
+  />
+
+  <CTASection
+    title="Prepare this page for launch"
+    description="When campaign details are finalized, replace placeholder text, add proof assets, and align tracking requirements."
+    primaryLabel="Contact NovaLink"
+    primaryHref="/contact"
+    secondaryLabel="Back to Home"
+    secondaryHref="/"
+  />
+</MainLayout>

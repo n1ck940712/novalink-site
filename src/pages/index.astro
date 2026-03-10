@@ -1,0 +1,42 @@
+---
+import CTASection from '../components/CTASection.astro';
+import ContactWhatsAppCTA from '../components/ContactWhatsAppCTA.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import TrustSection from '../components/TrustSection.astro';
+import { coreServices, homeFAQs, homeProofMetrics } from '../content/site-data';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+  <HeroSection
+    eyebrow="Growth Partner for SMEs"
+    title="Build predictable growth with practical digital solutions"
+    description="NovaLink helps SME teams improve acquisition, conversion, and operations through focused execution support. Atome onboarding is one of our offerings, not our full identity."
+    primaryAction={{ label: 'Discuss Your Priorities', href: '/contact' }}
+    secondaryAction={{ label: 'Explore Services', href: '/services' }}
+    supportingNote="Clear scope, lean execution, and measurable momentum."
+  />
+
+  <ServicesGrid
+    heading="What NovaLink Delivers"
+    intro="Choose one service to start, or combine modules into a broader growth engagement."
+    items={coreServices}
+  />
+
+  <TrustSection metrics={homeProofMetrics} />
+
+  <CTASection
+    title="Planning a dedicated Atome campaign later?"
+    description="The `/atome` route is already prepared as a focused landing page scaffold so your team can launch quickly when campaign copy is ready."
+    primaryLabel="View Atome Placeholder"
+    primaryHref="/atome"
+    secondaryLabel="Contact NovaLink"
+    secondaryHref="/contact"
+  />
+
+  <FAQAccordion items={homeFAQs} />
+
+  <ContactWhatsAppCTA />
+</MainLayout>

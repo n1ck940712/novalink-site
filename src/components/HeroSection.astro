@@ -1,0 +1,56 @@
+---
+interface Action {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryAction: Action;
+  secondaryAction?: Action;
+  supportingNote?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  primaryAction,
+  secondaryAction,
+  supportingNote,
+} = Astro.props;
+---
+
+<section class="container-shell pt-14 sm:pt-18">
+  <div class="panel relative overflow-hidden px-6 py-12 sm:px-10 sm:py-16">
+    <div class="absolute -right-10 -top-14 h-48 w-48 rounded-full bg-brand-300/30 blur-3xl" aria-hidden="true"></div>
+    <div class="absolute -bottom-16 left-16 h-48 w-48 rounded-full bg-cyan-300/20 blur-3xl" aria-hidden="true"></div>
+
+    <div class="relative max-w-3xl space-y-6">
+      {eyebrow && (
+        <p class="inline-flex rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-800">
+          {eyebrow}
+        </p>
+      )}
+
+      <h1 class="text-balance text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl md:text-5xl">
+        {title}
+      </h1>
+
+      <p class="max-w-2xl text-pretty text-base text-slate-700 sm:text-lg">
+        {description}
+      </p>
+
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a href={primaryAction.href} class="btn-primary text-center">{primaryAction.label}</a>
+        {secondaryAction && (
+          <a href={secondaryAction.href} class="btn-secondary text-center">{secondaryAction.label}</a>
+        )}
+      </div>
+
+      {supportingNote && <p class="text-sm text-slate-600">{supportingNote}</p>}
+    </div>
+  </div>
+</section>

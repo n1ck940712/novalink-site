@@ -1,0 +1,52 @@
+---
+import CTASection from '../components/CTASection.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import { coreServices } from '../content/site-data';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Services"
+  description="NovaLink services for SME growth, digital operations, commerce experience improvements, and Atome onboarding support."
+>
+  <section class="container-shell pt-14">
+    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Services</h1>
+    <p class="mt-4 max-w-3xl text-base text-slate-600">
+      Our service model is designed to stay practical for lean teams: clear priorities, realistic scope, and implementation support that drives action.
+    </p>
+  </section>
+
+  <ServicesGrid
+    heading="Core Service Tracks"
+    intro="Each track can be delivered as a focused sprint or as part of a broader growth program."
+    items={coreServices}
+  />
+
+  <section class="container-shell pt-12">
+    <div class="grid gap-5 md:grid-cols-2">
+      <article class="panel p-6">
+        <h2 class="text-xl font-semibold text-slate-900">Engagement model</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-600">
+          <li>Discovery session to define business priorities</li>
+          <li>Scoped 30 to 90 day execution plan</li>
+          <li>Review cadence with progress checkpoints</li>
+        </ul>
+      </article>
+      <article class="panel p-6">
+        <h2 class="text-xl font-semibold text-slate-900">Typical outcomes</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-600">
+          <li>Improved lead-to-sale conversion clarity</li>
+          <li>Cleaner operational handoff and ownership</li>
+          <li>Faster rollout of customer-facing initiatives</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <CTASection
+    title="Need a tailored scope?"
+    description="Share your current priorities and constraints. We can map the fastest path to useful outcomes."
+    primaryLabel="Start a Conversation"
+    primaryHref="/contact"
+  />
+</MainLayout>

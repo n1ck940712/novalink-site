@@ -1,0 +1,24 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<MainLayout title="Terms" description="NovaLink terms and conditions placeholder.">
+  <section class="container-shell pt-14">
+    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Terms of Use</h1>
+    <p class="mt-4 max-w-3xl text-sm text-slate-600">
+      This is a placeholder terms page for the initial launch. Replace with your approved legal terms before production go-live.
+    </p>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel space-y-4 p-6 text-sm text-slate-600">
+      <p>All website content is provided for general information unless otherwise stated.</p>
+      <p>Engagement scope, pricing, timelines, and delivery expectations are defined separately in signed proposals or agreements.</p>
+      <p>
+        For legal and commercial clarifications, contact
+        <a class="font-medium text-brand-800" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
+      </p>
+    </div>
+  </section>
+</MainLayout>
