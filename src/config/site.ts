@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: 'Novalink Technologies',
   // Set to your uploaded file in /public (example: '/novalink-logo.svg').
   // Leave empty string to keep text/monogram fallback in navbar.
-  logoSrc: '/novalink-logo.png',
+  logoSrc: '/novalink-logo-long.png',
   logoAlt: 'Novalink Technologies',
   defaultTitle: 'Novalink Technologies | Practical Digital Solutions for SMEs',
   defaultDescription:
