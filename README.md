@@ -95,6 +95,25 @@ Use GitHub integration with Cloudflare Pages.
 
 No Cloudflare adapter is required for this setup.
 
+### Troubleshooting: `@astrojs/cloudflare` install error
+
+If your build logs show:
+
+```text
+npm i @astrojs/cloudflare@^13.x wrangler@^4.x
+ERESOLVE unable to resolve dependency tree
+peer astro@"^6.0.0-alpha.0" from @astrojs/cloudflare@13.x
+```
+
+it means the adapter version is incompatible with this project (`astro@5`).
+
+- For this static site: do **not** run `astro add cloudflare`; keep build command as `npm run build`.
+- Only if you intentionally switch to SSR on Cloudflare: use an Astro 5 compatible adapter, e.g.:
+
+```bash
+npm i @astrojs/cloudflare@^12.6.13
+```
+
 ## SEO and Metadata Defaults
 
 Configured in `src/layouts/MainLayout.astro` and `src/config/site.ts`:
