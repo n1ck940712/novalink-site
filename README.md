@@ -84,24 +84,38 @@ npm run preview
 
 Static output is generated into `dist/`.
 
+One-command local check:
+
+```bash
+npm run preview:local
+```
+
 ## Cloudflare Pages Deployment
 
-Use GitHub integration with Cloudflare Pages.
+You can deploy in two ways:
 
-- Framework preset: `Astro` (or `None`, both are fine for static build)
+1. GitHub integration (Cloudflare builds on push, uses Pages build quota)
+2. Local-first prebuilt upload (builds on your machine first)
+
+No Cloudflare adapter is required for this setup.
+
+### Local-first flow (recommended if you want to save build quota)
+
+```bash
+npm run preview:local
+npm run deploy:pages:prebuilt
+```
+
+`deploy:pages:prebuilt` uploads `dist/` directly to Pages, so Cloudflare does not need to run your build step.
+
+### GitHub integration flow
+
+- Framework preset: `Astro` (or `None`)
 - Build command: `npm run build`
 - Build output directory: `dist`
 - Node version: `20` or newer recommended
 
-No Cloudflare adapter is required for this setup.
-
-If your CI platform has a separate deploy command configured, use:
-
-```bash
-npm run deploy:cf
-```
-
-This repo includes `wrangler.jsonc` and disables Wrangler framework autoconfig in the deploy script to avoid `astro add cloudflare` prompts in non-interactive CI.
+This repo also includes `wrangler.jsonc` and disables Wrangler framework autoconfig in `deploy:cf` scripts to avoid `astro add cloudflare` prompts in non-interactive CI.
 
 ### Troubleshooting: `@astrojs/cloudflare` install error
 
@@ -116,7 +130,8 @@ peer astro@"^6.0.0-alpha.0" from @astrojs/cloudflare@13.x
 it means the adapter version is incompatible with this project (`astro@5`).
 
 - For this static site: do **not** run `astro add cloudflare`; keep build command as `npm run build`.
-- If a deploy command is required, use `npm run deploy:cf` (or `wrangler deploy --experimental-autoconfig false`) instead of plain `wrangler deploy`.
+- For Cloudflare Pages without build minutes, use `npm run deploy:pages:prebuilt`.
+- For Wrangler Worker-style deploys, use `npm run deploy:cf` (or `wrangler deploy --experimental-autoconfig false`) instead of plain `wrangler deploy`.
 - Only if you intentionally switch to SSR on Cloudflare: use an Astro 5 compatible adapter, e.g.:
 
 ```bash

@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "preview:local": "npm run build && npm run preview",
+    "preview:cf": "npm run build && wrangler pages dev dist",
     "astro": "astro",
+    "deploy:pages:prebuilt": "npm run build && wrangler pages deploy dist",
     "deploy:cf": "wrangler deploy --experimental-autoconfig false",
     "deploy:cf:dry": "wrangler deploy --dry-run --experimental-autoconfig false"
   },
