@@ -1,49 +1,77 @@
 ---
 import CTASection from '../components/CTASection.astro';
+import { siteConfig } from '../config/site';
 import MainLayout from '../layouts/MainLayout.astro';
+
+const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 ---
 
 <MainLayout
   title="About"
-  description="About NovaLink and how we support SME teams with practical digital growth and enablement work."
+  description="About NovaLink Technologies: from web and digital marketing foundations to broader SME-focused digital solutions execution."
 >
   <section class="container-shell pt-14">
-    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">About NovaLink</h1>
+    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">About NovaLink Technologies</h1>
     <p class="mt-4 max-w-3xl text-base text-slate-600">
-      NovaLink exists to help SMEs turn digital ambitions into practical execution. We focus on clear outcomes, strong collaboration, and plans that teams can sustain.
+      NovaLink began with practical web development and digital marketing work. The current direction keeps that foundation while expanding into broader SME-focused digital solutions execution.
     </p>
   </section>
 
   <section class="container-shell pt-12">
     <div class="grid gap-5 md:grid-cols-3">
       <article class="panel p-6">
-        <h2 class="text-lg font-semibold text-slate-900">Mission</h2>
-        <p class="mt-3 text-sm text-slate-600">Support growing businesses with execution-first digital solutions that produce measurable momentum.</p>
+        <h2 class="text-lg font-semibold text-slate-900">Foundation</h2>
+        <p class="mt-3 text-sm text-slate-600">
+          Core legacy service base: websites, website support, SEO/SEM/PPC, and e-commerce/payment integration.
+        </p>
       </article>
       <article class="panel p-6">
-        <h2 class="text-lg font-semibold text-slate-900">Operating Style</h2>
-        <p class="mt-3 text-sm text-slate-600">Lean, accountable, and transparent. We prioritize practical next steps over heavy process overhead.</p>
+        <h2 class="text-lg font-semibold text-slate-900">Evolution</h2>
+        <p class="mt-3 text-sm text-slate-600">
+          NovaLink now supports broader digital execution needs, including landing pages, commerce/payment-related work, and selected growth system/automation projects.
+        </p>
       </article>
       <article class="panel p-6">
-        <h2 class="text-lg font-semibold text-slate-900">Collaboration Model</h2>
-        <p class="mt-3 text-sm text-slate-600">We work closely with founders, commercial leads, and operations teams to keep execution aligned with business goals.</p>
+        <h2 class="text-lg font-semibold text-slate-900">Working Style</h2>
+        <p class="mt-3 text-sm text-slate-600">
+          Practical and execution-focused: clear scope, direct communication, and steady iteration instead of overcomplicated process.
+        </p>
       </article>
     </div>
   </section>
 
   <section class="container-shell pt-12">
     <div class="panel p-6 sm:p-8">
-      <h2 class="text-xl font-semibold text-slate-900">What this site is designed for</h2>
+      <h2 class="text-xl font-semibold text-slate-900">What this means for clients now</h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        This new website is structured as a maintainable repo-first foundation. Content sections are intentionally modular so business messaging can be refined quickly as offerings evolve.
+        The site is structured as a clean replacement of the previous WordPress setup. It keeps legacy business strengths visible while making room for future collaboration paths beyond any single offering.
       </p>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600">
+        <li>Websites and landing pages</li>
+        <li>Website support and optimization</li>
+        <li>Commerce/payment implementation support</li>
+        <li>Search visibility and paid acquisition support</li>
+        <li>Selected growth systems and automation work</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel border-dashed p-6">
+      <h2 class="text-xl font-semibold text-slate-900">Founder / Team Story Placeholder</h2>
+      <p class="mt-3 text-sm text-slate-600">
+        Add approved team background and credibility details here. Keep this section factual and concise.
+      </p>
+      <!-- TODO(content): Insert approved founder/team narrative and credentials when finalized. -->
     </div>
   </section>
 
   <CTASection
-    title="Want to see if we are a fit?"
-    description="Tell us your current growth challenge and we can recommend a practical starting scope."
-    primaryLabel="Contact NovaLink"
-    primaryHref="/contact"
+    title="Discuss your current priority"
+    description="Start with a short brief on WhatsApp and we can suggest a practical first scope."
+    primaryLabel="Chat on WhatsApp"
+    primaryHref={whatsappLink}
+    secondaryLabel="Contact Page"
+    secondaryHref="/contact"
   />
 </MainLayout>

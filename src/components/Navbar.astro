@@ -33,7 +33,14 @@ const isActive = (href: string) =>
             {link.label}
           </a>
         ))}
-        <a href="/contact" class="btn-primary text-sm">Book a Call</a>
+        <a
+          href={`https://wa.me/${siteConfig.phoneE164}`}
+          class="btn-primary text-sm"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          WhatsApp
+        </a>
       </nav>
 
       <details class="group md:hidden">
@@ -55,7 +62,14 @@ const isActive = (href: string) =>
                 {link.label}
               </a>
             ))}
-            <a href="/contact" class="btn-primary mt-2 text-center text-sm">Book a Call</a>
+            <a
+              href={`https://wa.me/${siteConfig.phoneE164}`}
+              class="btn-primary mt-2 text-center text-sm"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              WhatsApp
+            </a>
           </nav>
         </div>
       </details>

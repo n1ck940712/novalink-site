@@ -20,7 +20,8 @@ export interface ProofMetric {
 }
 
 export const navigationLinks: NavLink[] = [
-  { label: 'Services', href: '/services' },
+  { label: 'Home', href: '/' },
+  { label: 'Solutions', href: '/services' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
   { label: 'Atome', href: '/atome' },
@@ -28,84 +29,96 @@ export const navigationLinks: NavLink[] = [
 
 export const coreServices: ServiceItem[] = [
   {
-    title: 'Growth Strategy for SMEs',
+    title: 'Websites & Landing Pages',
     summary:
-      'Prioritized digital roadmaps focused on revenue, conversion, and operational efficiency.',
-    bullets: ['Go-to-market planning', 'Offer design and positioning', 'Conversion-focused customer journeys'],
+      'Build or improve business websites and campaign landing pages focused on clear messaging and conversion.',
+    bullets: ['Business websites', 'Campaign landing pages', 'Lead capture and conversion flow setup'],
   },
   {
-    title: 'Digital Operations Enablement',
+    title: 'Website Support & Optimization',
     summary:
-      'Hands-on setup and optimization of tools, workflows, and internal processes that scale with your team.',
-    bullets: ['Process mapping', 'Automation opportunities', 'Playbooks for staff onboarding'],
+      'Ongoing updates, technical fixes, and practical improvements so your website remains reliable and useful.',
+    bullets: ['Content and page updates', 'Performance and UX improvements', 'Technical maintenance support'],
   },
   {
-    title: 'Commerce & Payment Experiences',
+    title: 'E-commerce & Payment Integration',
     summary:
-      'Practical checkout and payment-related improvements that reduce friction and improve customer confidence.',
-    bullets: ['Checkout UX guidance', 'Offer communication', 'Performance and funnel reviews'],
+      'Support checkout and payment-related implementation for online selling and smoother purchase completion.',
+    bullets: ['Checkout journey support', 'Payment integration guidance', 'Commerce flow troubleshooting'],
   },
   {
-    title: 'Atome Onboarding Support',
+    title: 'SEO & Search Visibility',
     summary:
-      'Dedicated implementation and merchant support for businesses activating Atome as one part of their growth stack.',
-    bullets: ['Merchant onboarding guidance', 'Activation support', 'Ongoing optimization recommendations'],
+      'Improve discoverability through foundational SEO work and practical search visibility improvements.',
+    bullets: ['Technical SEO baseline', 'On-page optimization', 'Search performance monitoring'],
+  },
+  {
+    title: 'Paid Acquisition / Performance Marketing',
+    summary:
+      'Planning and optimization support for paid channels where predictable lead quality and spend control matter.',
+    bullets: ['SEM and PPC campaign support', 'Landing page alignment', 'Budget and conversion tracking basics'],
+  },
+  {
+    title: 'Growth Systems / Business Automation',
+    summary:
+      'An expansion area beyond the legacy service base: practical workflow and automation support for SME operations.',
+    bullets: ['Manual process reduction', 'Operational handoff improvements', 'Simple system and workflow setup'],
   },
 ];
 
 export const homeProofMetrics: ProofMetric[] = [
-  { label: 'SME-Friendly Delivery', value: 'Fast, practical, no bloat' },
-  { label: 'Cross-Functional Support', value: 'Strategy + operations + execution' },
-  { label: 'Partnership Approach', value: 'Operator mindset, not vendor-only' },
+  { label: 'Legacy Service Foundation', value: 'Web, support, SEO/SEM/PPC, and commerce integration' },
+  { label: 'Working Style', value: 'Practical scope, clear priorities, measurable next steps' },
+  { label: 'Collaboration Paths', value: 'Atome onboarding support plus broader digital project execution' },
 ];
 
 export const homeFAQs: FAQItem[] = [
   {
-    question: 'Do you only support Atome-related work?',
+    question: 'Is NovaLink only for Atome-related work?',
     answer:
-      'No. Atome support is one offering. NovaLink supports broader SME growth work across strategy, digital operations, and customer experience.',
+      'No. Atome onboarding support is one path. NovaLink also supports websites, landing pages, commerce and payment-related work, and selected digital execution projects.',
   },
   {
-    question: 'What size of business do you typically work with?',
+    question: 'What type of businesses does NovaLink usually support?',
     answer:
-      'Most clients are small to mid-sized teams that need practical execution support without building a large in-house digital team.',
+      'The current focus is SME teams that need practical implementation support without unnecessary process overhead.',
   },
   {
-    question: 'Can we start with a single service and expand later?',
+    question: 'Can we start with one scoped project first?',
     answer:
-      'Yes. Many engagements begin with one focused project, then expand once priorities and impact are clear.',
+      'Yes. Most work starts with a focused scope, then expands only when priorities, ownership, and expected outcomes are clear.',
   },
 ];
 
 export const atomeBenefits = [
   {
-    title: 'Trusted Offer Familiarity',
-    detail: 'Leverage Atome as a recognizable financing option that can reduce purchase hesitation.',
+    title: 'Offer-Focused Landing Path',
+    detail: 'Keep campaign messaging centered on the Atome offer while preserving clear next steps for merchants.',
   },
   {
-    title: 'Guided Merchant Onboarding',
-    detail: 'NovaLink coordinates onboarding details so internal teams can move quickly with fewer blockers.',
+    title: 'Onboarding Coordination Support',
+    detail: 'NovaLink supports merchant onboarding coordination, documentation flow, and response handling.',
   },
   {
-    title: 'Operational Clarity',
-    detail: 'Receive implementation checklists and support workflows that are simple to maintain over time.',
+    title: 'Launch-Ready Structure',
+    detail: 'Use modular sections for benefits, FAQ, objections, and CTA so campaign updates can be made quickly.',
   },
 ];
 
 export const atomeFAQs: FAQItem[] = [
   {
-    question: 'Is this page the final Atome sales copy?',
+    question: 'Is NovaLink presented as Atome internal staff on this page?',
     answer:
-      'No. This is a structured placeholder for the future campaign page. Messaging, offer specifics, and proof assets should be updated before launch.',
+      'No. NovaLink is positioned as the supporting operator for onboarding coordination and merchant support, not as Atome internal staff.',
   },
   {
-    question: 'Who handles onboarding and merchant support?',
+    question: 'Is this the final campaign copy?',
     answer:
-      'Atome provides the product trust anchor, while NovaLink handles merchant-facing onboarding coordination and support workflows.',
+      'No. This route is intentionally a structured placeholder. Final offer terms, proof assets, and BM-first campaign copy should be inserted after approval.',
   },
   {
-    question: 'Can this page be localized later?',
+    question: 'Can this page be localized to BM-first later?',
     answer:
-      'Yes. The structure is component-based so Bahasa Malaysia-first copy and alternate sections can be added quickly.',
+      'Yes. The page is built to keep copy blocks modular, with TODO markers where BM-first copy can be inserted during campaign refinement.',
   },
 ];

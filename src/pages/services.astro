@@ -1,52 +1,55 @@
 ---
 import CTASection from '../components/CTASection.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
+import { siteConfig } from '../config/site';
 import { coreServices } from '../content/site-data';
 import MainLayout from '../layouts/MainLayout.astro';
+
+const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 ---
 
 <MainLayout
   title="Services"
-  description="NovaLink services for SME growth, digital operations, commerce experience improvements, and Atome onboarding support."
+  description="NovaLink Technologies service buckets covering websites, support, commerce/payment integration, search visibility, paid acquisition, and growth systems."
 >
   <section class="container-shell pt-14">
-    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Services</h1>
+    <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Solutions</h1>
     <p class="mt-4 max-w-3xl text-base text-slate-600">
-      Our service model is designed to stay practical for lean teams: clear priorities, realistic scope, and implementation support that drives action.
+      The service structure below uses legacy NovaLink foundations as the base, regrouped into practical execution buckets for current SME needs.
     </p>
   </section>
 
   <ServicesGrid
-    heading="Core Service Tracks"
-    intro="Each track can be delivered as a focused sprint or as part of a broader growth program."
+    heading="Service Buckets"
+    intro="Each bucket can be scoped as a focused project or combined into a broader working engagement."
     items={coreServices}
   />
 
   <section class="container-shell pt-12">
     <div class="grid gap-5 md:grid-cols-2">
       <article class="panel p-6">
-        <h2 class="text-xl font-semibold text-slate-900">Engagement model</h2>
-        <ul class="mt-4 space-y-2 text-sm text-slate-600">
-          <li>Discovery session to define business priorities</li>
-          <li>Scoped 30 to 90 day execution plan</li>
-          <li>Review cadence with progress checkpoints</li>
-        </ul>
+        <h2 class="text-xl font-semibold text-slate-900">How engagement usually starts</h2>
+        <ol class="mt-4 space-y-2 text-sm text-slate-600">
+          <li>1. Define business priority and current constraint.</li>
+          <li>2. Scope a practical first phase (often 30 to 90 days).</li>
+          <li>3. Review ownership, progress, and next-step scope.</li>
+        </ol>
       </article>
       <article class="panel p-6">
-        <h2 class="text-xl font-semibold text-slate-900">Typical outcomes</h2>
-        <ul class="mt-4 space-y-2 text-sm text-slate-600">
-          <li>Improved lead-to-sale conversion clarity</li>
-          <li>Cleaner operational handoff and ownership</li>
-          <li>Faster rollout of customer-facing initiatives</li>
-        </ul>
+        <h2 class="text-xl font-semibold text-slate-900">Expansion note</h2>
+        <p class="mt-4 text-sm text-slate-600">
+          The legacy site explicitly covered web, support, SEO/SEM/PPC, and e-commerce/payment work. Growth systems and business automation are included here as a current expansion direction, not a retroactive legacy claim.
+        </p>
       </article>
     </div>
   </section>
 
   <CTASection
-    title="Need a tailored scope?"
-    description="Share your current priorities and constraints. We can map the fastest path to useful outcomes."
-    primaryLabel="Start a Conversation"
-    primaryHref="/contact"
+    title="Need a scoped recommendation?"
+    description="Share your current business priority and we can suggest a practical first scope."
+    primaryLabel="Chat on WhatsApp"
+    primaryHref={whatsappLink}
+    secondaryLabel="Use Contact Page"
+    secondaryHref="/contact"
   />
 </MainLayout>
