@@ -95,6 +95,14 @@ Use GitHub integration with Cloudflare Pages.
 
 No Cloudflare adapter is required for this setup.
 
+If your CI platform has a separate deploy command configured, use:
+
+```bash
+npm run deploy:cf
+```
+
+This repo includes `wrangler.jsonc` and disables Wrangler framework autoconfig in the deploy script to avoid `astro add cloudflare` prompts in non-interactive CI.
+
 ### Troubleshooting: `@astrojs/cloudflare` install error
 
 If your build logs show:
@@ -108,6 +116,7 @@ peer astro@"^6.0.0-alpha.0" from @astrojs/cloudflare@13.x
 it means the adapter version is incompatible with this project (`astro@5`).
 
 - For this static site: do **not** run `astro add cloudflare`; keep build command as `npm run build`.
+- If a deploy command is required, use `npm run deploy:cf` (or `wrangler deploy --experimental-autoconfig false`) instead of plain `wrangler deploy`.
 - Only if you intentionally switch to SSR on Cloudflare: use an Astro 5 compatible adapter, e.g.:
 
 ```bash

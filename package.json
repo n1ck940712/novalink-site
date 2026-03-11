@@ -6,11 +6,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy:cf": "wrangler deploy --experimental-autoconfig false",
+    "deploy:cf:dry": "wrangler deploy --dry-run --experimental-autoconfig false"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",
     "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.72.0"
   }
 }
