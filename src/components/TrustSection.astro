@@ -9,7 +9,7 @@ interface Props {
 
 const {
   heading = 'Proof & Delivery Confidence',
-  intro = 'Use this area to add concrete client logos, KPIs, and mini case studies as they become available.',
+  intro = 'A quick overview of how NovaLink supports execution and collaboration.',
   metrics,
 } = Astro.props;
 ---
@@ -27,12 +27,5 @@ const {
         <p class="mt-3 text-lg font-semibold text-slate-900">{metric.value}</p>
       </article>
     ))}
-  </div>
-
-  <div class="mt-8 panel border-dashed p-6">
-    <p class="text-sm font-medium text-slate-700">Case study placeholders</p>
-    <p class="mt-2 text-sm text-slate-600">
-      Add 2 to 3 concise stories here: challenge, action, and measurable outcome. Keep each card under 120 words for scanability.
-    </p>
   </div>
 </section>

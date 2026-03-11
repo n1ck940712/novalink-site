@@ -5,6 +5,6 @@
   <rect x="120" y="138" width="960" height="354" rx="28" fill="white" stroke="#E2E8F0" stroke-width="2"/>
   <rect x="168" y="197" width="86" height="86" rx="18" fill="#1F57DB"/>
   <path d="M192 255V225H202L230 245V225H240V255H230L202 235V255H192Z" fill="white"/>
-  <text x="168" y="337" fill="#0F172A" font-size="56" font-family="Avenir Next, Helvetica Neue, sans-serif" font-weight="700">NovaLink</text>
+  <text x="168" y="337" fill="#0F172A" font-size="56" font-family="Avenir Next, Helvetica Neue, sans-serif" font-weight="700">Novalink</text>
   <text x="168" y="386" fill="#334155" font-size="30" font-family="Avenir Next, Helvetica Neue, sans-serif">Growth &amp; digital solutions partner for SMEs</text>
 </svg>

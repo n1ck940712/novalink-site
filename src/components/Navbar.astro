@@ -9,14 +9,21 @@ interface Props {
 const { currentPath = '/' } = Astro.props;
 const isActive = (href: string) =>
   currentPath === href || (href !== '/' && currentPath.startsWith(`${href}/`));
+const hasLogoImage = Boolean(siteConfig.logoSrc);
 ---
 
 <header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/90 backdrop-blur">
   <div class="container-shell py-4">
     <div class="flex items-center justify-between gap-4">
       <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-900">
-        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">NL</span>
-        {siteConfig.name}
+        {hasLogoImage ? (
+          <img src={siteConfig.logoSrc} alt={siteConfig.logoAlt} class="h-8 w-auto" />
+        ) : (
+          <>
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">NL</span>
+            {siteConfig.name}
+          </>
+        )}
       </a>
 
       <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">

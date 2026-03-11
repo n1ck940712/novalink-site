@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #eef4ff;
-  --color-brand-100: #dce7ff;
-  --color-brand-200: #c0d3ff;
-  --color-brand-500: #356df3;
-  --color-brand-600: #1f57db;
-  --color-brand-700: #1a46b3;
-  --color-brand-800: #153887;
+  /* TODO(brand): Replace these temporary non-blue values with Novalink's exact brand palette. */
+  --color-brand-50: #fff4eb;
+  --color-brand-100: #ffe6d2;
+  --color-brand-200: #ffd2ad;
+  --color-brand-500: #f58d3d;
+  --color-brand-600: #e9741f;
+  --color-brand-700: #c35b0f;
+  --color-brand-800: #8d3f0a;
   --font-sans: "Sora", "Avenir Next", "Futura", "Helvetica Neue", sans-serif;
   --font-display: "Space Grotesk", "Avenir Next", "Trebuchet MS", sans-serif;
 }
@@ -20,8 +21,8 @@
   body {
     @apply min-h-screen bg-slate-50 text-slate-900 antialiased;
     background-image:
-      radial-gradient(circle at 12% 2%, rgba(53, 109, 243, 0.14), transparent 40%),
-      radial-gradient(circle at 88% 18%, rgba(16, 185, 129, 0.12), transparent 30%);
+      radial-gradient(circle at 12% 2%, rgba(245, 141, 61, 0.18), transparent 40%),
+      radial-gradient(circle at 88% 18%, rgba(249, 115, 22, 0.1), transparent 30%);
     background-attachment: fixed;
   }
 

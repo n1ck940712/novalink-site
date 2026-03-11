@@ -1,6 +1,6 @@
-# NovaLink Site (Astro + Tailwind + TypeScript)
+# Novalink Site (Astro + Tailwind + TypeScript)
 
-Repo-first marketing website for **NovaLink Technologies**, built as a full replacement for the old WordPress site.
+Repo-first marketing website for **Novalink Technologies**, built as a full replacement for the old WordPress site.
 
 This version is intentionally static, maintainable, and easy to edit by future AI coding agents.
 

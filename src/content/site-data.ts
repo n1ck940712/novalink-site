@@ -74,12 +74,12 @@ export const homeProofMetrics: ProofMetric[] = [
 
 export const homeFAQs: FAQItem[] = [
   {
-    question: 'Is NovaLink only for Atome-related work?',
+    question: 'Is Novalink only for Atome-related work?',
     answer:
-      'No. Atome onboarding support is one path. NovaLink also supports websites, landing pages, commerce and payment-related work, and selected digital execution projects.',
+      'No. Atome onboarding support is one path. Novalink also supports websites, landing pages, commerce and payment-related work, and selected digital execution projects.',
   },
   {
-    question: 'What type of businesses does NovaLink usually support?',
+    question: 'What type of businesses does Novalink usually support?',
     answer:
       'The current focus is SME teams that need practical implementation support without unnecessary process overhead.',
   },
@@ -97,7 +97,7 @@ export const atomeBenefits = [
   },
   {
     title: 'Onboarding Coordination Support',
-    detail: 'NovaLink supports merchant onboarding coordination, documentation flow, and response handling.',
+    detail: 'Novalink supports merchant onboarding coordination, documentation flow, and response handling.',
   },
   {
     title: 'Launch-Ready Structure',
@@ -107,9 +107,9 @@ export const atomeBenefits = [
 
 export const atomeFAQs: FAQItem[] = [
   {
-    question: 'Is NovaLink presented as Atome internal staff on this page?',
+    question: 'Is Novalink presented as Atome internal staff on this page?',
     answer:
-      'No. NovaLink is positioned as the supporting operator for onboarding coordination and merchant support, not as Atome internal staff.',
+      'No. Novalink is positioned as the supporting operator for onboarding coordination and merchant support, not as Atome internal staff.',
   },
   {
     question: 'Is this the final campaign copy?',
