@@ -4,6 +4,8 @@ export interface NavLink {
 }
 
 export interface ServiceItem {
+  id?: string;
+  href?: string;
   title: string;
   summary: string;
   bullets: string[];
@@ -29,96 +31,108 @@ export const navigationLinks: NavLink[] = [
 
 export const coreServices: ServiceItem[] = [
   {
+    id: 'growth-systems-automation',
+    href: '/services#growth-systems-automation',
+    title: 'Growth Systems & Automation',
+    summary:
+      'Practical workflow and automation setup that reduces manual work and improves handoffs across sales, ops, and admin.',
+    bullets: [
+      'What it is: workflow design, automation setup, and integration handoffs',
+      'Problems solved: repetitive manual tasks, missed follow-ups, disconnected process steps',
+      'Starting scope: one high-friction workflow scoped and implemented in 30 to 90 days',
+    ],
+  },
+  {
+    id: 'websites-landing-pages',
+    href: '/services#websites-landing-pages',
     title: 'Websites & Landing Pages',
     summary:
-      'Build or improve business websites and campaign landing pages focused on clear messaging and conversion.',
-    bullets: ['Business websites', 'Campaign landing pages', 'Lead capture and conversion flow setup'],
+      'Business websites and landing pages built around clear messaging, conversion flow, and practical maintainability.',
+    bullets: [
+      'What it is: core website pages, campaign landing pages, and conversion flow setup',
+      'Problems solved: unclear positioning, weak lead flow, pages that are hard to update',
+      'Starting scope: one priority page set or one conversion-focused landing flow',
+    ],
   },
   {
-    title: 'Website Support & Optimization',
+    id: 'commerce-payment-enablement',
+    href: '/services#commerce-payment-enablement',
+    title: 'Commerce / Payment Enablement',
     summary:
-      'Ongoing updates, technical fixes, and practical improvements so your website remains reliable and useful.',
-    bullets: ['Content and page updates', 'Performance and UX improvements', 'Technical maintenance support'],
+      'Merchant-side setup support for checkout, payment flow, and commerce operations so transactions are easier to complete.',
+    bullets: [
+      'What it is: checkout flow setup support, payment integration coordination, commerce handoff clarity',
+      'Problems solved: checkout friction, setup delays, unclear ownership during implementation',
+      'Starting scope: one checkout/payment flow review and implementation support phase',
+    ],
   },
   {
-    title: 'E-commerce & Payment Integration',
+    id: 'search-acquisition-support',
+    href: '/services#search-acquisition-support',
+    title: 'Search / Acquisition Support',
     summary:
-      'Support checkout and payment-related implementation for online selling and smoother purchase completion.',
-    bullets: ['Checkout journey support', 'Payment integration guidance', 'Commerce flow troubleshooting'],
-  },
-  {
-    title: 'SEO & Search Visibility',
-    summary:
-      'Improve discoverability through foundational SEO work and practical search visibility improvements.',
-    bullets: ['Technical SEO baseline', 'On-page optimization', 'Search performance monitoring'],
-  },
-  {
-    title: 'Paid Acquisition / Performance Marketing',
-    summary:
-      'Planning and optimization support for paid channels where predictable lead quality and spend control matter.',
-    bullets: ['SEM and PPC campaign support', 'Landing page alignment', 'Budget and conversion tracking basics'],
-  },
-  {
-    title: 'Growth Systems / Business Automation',
-    summary:
-      'An expansion area beyond the legacy service base: practical workflow and automation support for SME operations.',
-    bullets: ['Manual process reduction', 'Operational handoff improvements', 'Simple system and workflow setup'],
+      'Focused search and acquisition support connected to execution, so traffic efforts align with landing and conversion systems.',
+    bullets: [
+      'What it is: search baseline fixes, landing alignment, practical paid acquisition support',
+      'Problems solved: low-quality traffic, weak handoff from ad/search to conversion, wasted spend from tracking gaps',
+      'Starting scope: one channel plus one landing flow with clear tracking and next-step actions',
+    ],
   },
 ];
 
 export const homeProofMetrics: ProofMetric[] = [
-  { label: 'Legacy Service Foundation', value: 'Web, support, SEO/SEM/PPC, and commerce integration' },
-  { label: 'Working Style', value: 'Practical scope, clear priorities, measurable next steps' },
-  { label: 'Collaboration Paths', value: 'Atome onboarding support plus broader digital project execution' },
+  { label: 'Execution Model', value: 'Scoped first phase, clear ownership, practical follow-through' },
+  { label: 'Technical Focus', value: 'Web, workflows, integrations, and commerce setup support' },
+  { label: 'Operating Reality', value: 'Built for straightforward projects and messy handoff situations' },
 ];
 
 export const homeFAQs: FAQItem[] = [
   {
+    question: 'How do engagements usually start?',
+    answer:
+    'Most engagements start with one scoped problem. We define the priority, implement a practical first phase, and expand only when next steps are clear.',
+  },
+  {
+    question: 'Do you only support straightforward projects?',
+    answer:
+    'No. We support both straightforward projects and slightly messy operating situations where ownership and workflows need to be clarified during implementation.',
+  },
+  {
     question: 'Is Novalink only for Atome-related work?',
     answer:
-      'No. Atome onboarding support is one path. Novalink also supports websites, landing pages, commerce and payment-related work, and selected digital execution projects.',
-  },
-  {
-    question: 'What type of businesses does Novalink usually support?',
-    answer:
-      'The current focus is SME teams that need practical implementation support without unnecessary process overhead.',
-  },
-  {
-    question: 'Can we start with one scoped project first?',
-    answer:
-      'Yes. Most work starts with a focused scope, then expands only when priorities, ownership, and expected outcomes are clear.',
+      'No. Atome support is one entry point. Novalink also supports websites, workflows, automation, integrations, and commerce setup for SMEs.',
   },
 ];
 
 export const atomeBenefits = [
   {
-    title: 'Offer-Focused Landing Path',
-    detail: 'Keep campaign messaging centered on the Atome offer while preserving clear next steps for merchants.',
+    title: 'Clear Merchant Path',
+    detail: 'Get a practical path from initial interest to onboarding readiness with clear next-step actions.',
   },
   {
     title: 'Onboarding Coordination Support',
-    detail: 'Novalink supports merchant onboarding coordination, documentation flow, and response handling.',
+    detail: 'Novalink supports merchant-side coordination, requirement collection, and implementation follow-through.',
   },
   {
-    title: 'Launch-Ready Structure',
-    detail: 'Use modular sections for benefits, FAQ, objections, and CTA so campaign updates can be made quickly.',
+    title: 'Implementation Readiness',
+    detail: 'Keep setup and handoffs structured so activation is operationally manageable for your team.',
   },
 ];
 
 export const atomeFAQs: FAQItem[] = [
   {
-    question: 'Is Novalink presented as Atome internal staff on this page?',
+    question: 'Who is this page for?',
     answer:
-      'No. Novalink is positioned as the supporting operator for onboarding coordination and merchant support, not as Atome internal staff.',
+      'This page is for merchants evaluating or starting Atome setup and needing practical support on the merchant side.',
   },
   {
-    question: 'Is this the final campaign copy?',
+    question: 'What does Novalink handle?',
     answer:
-      'No. This route is intentionally a structured placeholder. Final offer terms, proof assets, and BM-first campaign copy should be inserted after approval.',
+      'Novalink handles merchant-side onboarding coordination, requirement collection support, and implementation readiness follow-through.',
   },
   {
-    question: 'Can this page be localized to BM-first later?',
+    question: 'What happens after contact?',
     answer:
-      'Yes. The page is built to keep copy blocks modular, with TODO markers where BM-first copy can be inserted during campaign refinement.',
+      'After you share your current status, we respond with practical next steps for onboarding and setup support.',
   },
 ];

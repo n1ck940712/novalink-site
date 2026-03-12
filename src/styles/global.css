@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* TODO(brand): Replace these temporary non-blue values with Novalink's exact brand palette. */
   --color-brand-50: #fff4eb;
   --color-brand-100: #ffe6d2;
   --color-brand-200: #ffd2ad;

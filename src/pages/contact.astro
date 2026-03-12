@@ -8,12 +8,12 @@ const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 
 <MainLayout
   title="Contact"
-  description="Contact Novalink Technologies for SME digital solutions support, including WhatsApp-first enquiries."
+  description="Contact Novalink for practical SME support across websites, workflows, automation, and commerce implementation."
 >
   <section class="container-shell pt-14">
     <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Contact Novalink</h1>
     <p class="mt-4 max-w-3xl text-base text-slate-600">
-      WhatsApp is the fastest route for new enquiries. Share your business type, current challenge, and timeline, and we will follow up with a practical next-step recommendation.
+      WhatsApp is the fastest way to start. Send a short brief and we will reply with a practical next step.
     </p>
     <div class="mt-6 flex flex-col gap-3 sm:flex-row">
       <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">Chat on WhatsApp</a>
@@ -21,95 +21,68 @@ const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
     </div>
   </section>
 
-  <section class="container-shell pt-12">
-    <div class="grid gap-5 md:grid-cols-2">
-      <article class="panel p-6">
-        <h2 class="text-xl font-semibold text-slate-900">Contact details</h2>
-        <div class="mt-4 space-y-4 text-sm text-slate-700">
-          <p>
-            <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">WhatsApp</span>
-            <a
-              class="mt-1 inline-block font-medium text-slate-900 hover:text-brand-800"
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {siteConfig.phoneDisplay}
-            </a>
-          </p>
-          <p>
-            <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">Email</span>
-            <a class="mt-1 inline-block font-medium text-slate-900 hover:text-brand-800" href={`mailto:${siteConfig.email}`}>
-              {siteConfig.email}
-            </a>
-          </p>
-          <p>
-            <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">Location</span>
-            <span class="mt-1 inline-block font-medium text-slate-900">{siteConfig.city}</span>
-          </p>
-        </div>
-      </article>
+  <!-- <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">What to Include in Your First Message</h2>
+      <ol class="mt-4 space-y-2 text-sm text-slate-600">
+        <li>1. Business type and market</li>
+        <li>2. Current setup (website, tools, or process)</li>
+        <li>3. Main problem to solve</li>
+        <li>4. Timeline and urgency</li>
+        <li>5. Desired outcome</li>
+      </ol>
+    </div>
+  </section> -->
 
-      <!-- TODO(form): Connect this form to a backend handler or form service when requirements are finalized. -->
-      <!-- <article class="panel p-6">
-        <h2 class="text-xl font-semibold text-slate-900">Enquiry form placeholder</h2>
-        <p class="mt-2 text-sm text-slate-600">
-          Use this structure for future form integration. For now, WhatsApp is the primary conversion path.
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Direct Contact Details</h2>
+      <div class="mt-4 space-y-4 text-sm text-slate-700">
+        <p>
+          <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">WhatsApp</span>
+          <a
+            class="mt-1 inline-block font-medium text-slate-900 hover:text-brand-800"
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {siteConfig.phoneDisplay}
+          </a>
         </p>
-        <form class="mt-4 space-y-3" action="#" method="post">
-          <label class="block text-sm text-slate-700">
-            Name
-            <input
-              type="text"
-              name="name"
-              class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
-              placeholder="Your name"
-            />
-          </label>
-          <label class="block text-sm text-slate-700">
-            Business name
-            <input
-              type="text"
-              name="business"
-              class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
-              placeholder="Business / company"
-            />
-          </label>
-          <label class="block text-sm text-slate-700">
-            Email
-            <input
-              type="email"
-              name="email"
-              class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
-              placeholder="name@company.com"
-            />
-          </label>
-          <label class="block text-sm text-slate-700">
-            Brief
-            <textarea
-              name="brief"
-              rows={4}
-              class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
-              placeholder="What do you need help with?"
-            ></textarea>
-          </label>
-          <button type="submit" class="btn-secondary">Submit Placeholder</button>
-        </form>
-      </article> -->
+        <p>
+          <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">Email</span>
+          <a class="mt-1 inline-block font-medium text-slate-900 hover:text-brand-800" href={`mailto:${siteConfig.email}`}>
+            {siteConfig.email}
+          </a>
+        </p>
+        <p>
+          <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">Location</span>
+          <span class="mt-1 inline-block font-medium text-slate-900">{siteConfig.city}</span>
+        </p>
+      </div>
     </div>
   </section>
 
   <section class="container-shell pt-12">
-    <div class="panel p-6">
-      <h2 class="text-xl font-semibold text-slate-900">Collaboration framing</h2>
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Good-Fit Enquiries</h2>
       <p class="mt-3 text-sm text-slate-600">
-        Novalink supports scoped projects and ongoing execution support. Typical starting points include websites, landing pages, commerce/payment implementation, search support, and selected automation-focused work.
+        Website or landing page improvements, workflow automation, system integration, commerce/payment setup support, and search/acquisition support tied to practical execution.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Discuss Your Next Step</h2>
+      <p class="mt-3 max-w-3xl text-sm text-slate-600">
+        Send your brief and timeline. We will respond with a scoped first step.
       </p>
     </div>
   </section>
 
   <ContactWhatsAppCTA
-    heading="Ready to start?"
-    description="Send a short WhatsApp message with your challenge and timeline. We will respond with a practical first-step scope."
+    heading="Send Your Brief"
+    description="Send your business type, current setup, and priority. We will reply with practical next steps."
   />
 </MainLayout>

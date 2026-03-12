@@ -8,70 +8,63 @@ const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 
 <MainLayout
   title="About"
-  description="About Novalink Technologies: from web and digital marketing foundations to broader SME-focused digital solutions execution."
+  description="Novalink is an execution-focused digital partner for SMEs, delivering practical systems across websites, workflows, and implementation support."
 >
   <section class="container-shell pt-14">
     <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">About Novalink Technologies</h1>
     <p class="mt-4 max-w-3xl text-base text-slate-600">
-      Novalink began with practical web development and digital marketing work. The current direction keeps that foundation while expanding into broader SME-focused digital solutions execution.
+      Novalink is an execution-focused digital partner for SMEs. We build and improve practical systems that help teams run better and convert better.
     </p>
   </section>
 
   <section class="container-shell pt-12">
-    <div class="grid gap-5 md:grid-cols-3">
-      <article class="panel p-6">
-        <h2 class="text-lg font-semibold text-slate-900">Foundation</h2>
-        <p class="mt-3 text-sm text-slate-600">
-          Core legacy service base: websites, website support, SEO/SEM/PPC, and e-commerce/payment integration.
-        </p>
-      </article>
-      <article class="panel p-6">
-        <h2 class="text-lg font-semibold text-slate-900">Evolution</h2>
-        <p class="mt-3 text-sm text-slate-600">
-          Novalink now supports broader digital execution needs, including landing pages, commerce/payment-related work, and selected growth system/automation projects.
-        </p>
-      </article>
-      <article class="panel p-6">
-        <h2 class="text-lg font-semibold text-slate-900">Working Style</h2>
-        <p class="mt-3 text-sm text-slate-600">
-          Practical and execution-focused: clear scope, direct communication, and steady iteration instead of overcomplicated process.
-        </p>
-      </article>
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">How We Work</h2>
+      <p class="mt-3 max-w-3xl text-base text-slate-600">
+        We define the immediate business constraint, scope a practical first phase, implement with clear ownership, and refine based on what actually improves operations or conversion.
+      </p>
+      <ol class="mt-4 space-y-2 text-sm text-slate-600">
+        <li>1. Define the main execution constraint and immediate goal.</li>
+        <li>2. Scope a practical first phase with clear ownership.</li>
+        <li>3. Implement and monitor what changes in operations or conversion flow.</li>
+        <li>4. Set clear next steps only after the first scope is working.</li>
+      </ol>
     </div>
   </section>
 
   <section class="container-shell pt-12">
     <div class="panel p-6 sm:p-8">
-      <h2 class="text-xl font-semibold text-slate-900">What this means for clients now</h2>
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">What We Help Solve</h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        The site is structured as a clean replacement of the previous WordPress setup. It keeps legacy business strengths visible while making room for future collaboration paths beyond any single offering.
+        Conversion flow issues, slow manual workflows, disconnected tools, underperforming landing pages, and commerce/payment setup friction.
       </p>
       <ul class="mt-4 space-y-2 text-sm text-slate-600">
-        <li>Websites and landing pages</li>
-        <li>Website support and optimization</li>
-        <li>Commerce/payment implementation support</li>
-        <li>Search visibility and paid acquisition support</li>
-        <li>Selected growth systems and automation work</li>
+        <li>Broken or unclear conversion paths from traffic to lead or sale</li>
+        <li>Manual workflows slowing daily operations and team handoffs</li>
+        <li>Integration and setup gaps across website, CRM, and payment flows</li>
+        <li>Execution bottlenecks where strategy exists but implementation stalls</li>
       </ul>
     </div>
   </section>
 
-  <!-- TODO(content): Insert approved founder/team narrative and credentials when finalized. -->
-  <!-- <section class="container-shell pt-12">
-    <div class="panel border-dashed p-6">
-      <h2 class="text-xl font-semibold text-slate-900">Founder / Team Story Placeholder</h2>
-      <p class="mt-3 text-sm text-slate-600">
-        Add approved team background and credibility details here. Keep this section factual and concise.
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Best-Fit Businesses</h2>
+      <p class="mt-3 max-w-3xl text-base text-slate-600">
+        SMEs that want practical implementation support, clear next steps, and operator-level follow-through.
+      </p>
+      <p class="mt-3 max-w-3xl text-sm text-slate-600">
+        The work fits teams that need useful digital systems working in real operating conditions, not presentation-only output.
       </p>
     </div>
-  </section> -->
+  </section>
 
   <CTASection
     title="Discuss your current priority"
-    description="Start with a short brief on WhatsApp and we can suggest a practical first scope."
+    description="Send your current priority and timeline on WhatsApp. We will propose a practical first step."
     primaryLabel="Chat on WhatsApp"
     primaryHref={whatsappLink}
-    secondaryLabel="Contact Page"
-    secondaryHref="/contact"
+    secondaryLabel="Email Novalink"
+    secondaryHref={`mailto:${siteConfig.email}`}
   />
 </MainLayout>

@@ -9,47 +9,42 @@ const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 ---
 
 <MainLayout
-  title="Services"
-  description="Novalink Technologies service buckets covering websites, support, commerce/payment integration, search visibility, paid acquisition, and growth systems."
+  title="Solutions"
+  description="Practical SME solutions across growth systems, websites, commerce/payment enablement, and search/acquisition support."
 >
   <section class="container-shell pt-14">
     <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Solutions</h1>
     <p class="mt-4 max-w-3xl text-base text-slate-600">
-      The service structure below uses legacy Novalink foundations as the base, regrouped into practical execution buckets for current SME needs.
+      Novalink helps SMEs execute better through practical digital systems. Our work is structured around four pillars: Growth Systems &amp; Automation, Websites &amp; Landing Pages, Commerce / Payment Enablement, and Search / Acquisition Support.
+    </p>
+    <p class="mt-3 max-w-3xl text-sm text-slate-600">
+      Each pillar can start as a focused scope and expand only when priorities and ownership are clear.
     </p>
   </section>
 
   <ServicesGrid
-    heading="Service Buckets"
-    intro="Each bucket can be scoped as a focused project or combined into a broader working engagement."
+    heading="Four Service Pillars"
+    intro="Each pillar defines what it is, the problems it solves, and a realistic starting scope."
     items={coreServices}
   />
 
   <section class="container-shell pt-12">
-    <div class="grid gap-5 md:grid-cols-2">
-      <article class="panel p-6">
-        <h2 class="text-xl font-semibold text-slate-900">How engagement usually starts</h2>
-        <ol class="mt-4 space-y-2 text-sm text-slate-600">
-          <li>1. Define business priority and current constraint.</li>
-          <li>2. Scope a practical first phase (often 30 to 90 days).</li>
-          <li>3. Review ownership, progress, and next-step scope.</li>
-        </ol>
-      </article>
-      <article class="panel p-6">
-        <h2 class="text-xl font-semibold text-slate-900">Expansion note</h2>
-        <p class="mt-4 text-sm text-slate-600">
-          The legacy site explicitly covered web, support, SEO/SEM/PPC, and e-commerce/payment work. Growth systems and business automation are included here as a current expansion direction, not a retroactive legacy claim.
-        </p>
-      </article>
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">How Projects Usually Start</h2>
+      <ol class="mt-4 space-y-2 text-sm text-slate-600">
+        <li>1. Define business priority and current execution constraint.</li>
+        <li>2. Scope a practical first phase, usually 30 to 90 days.</li>
+        <li>3. Implement, review outcomes, and confirm next-step scope.</li>
+      </ol>
     </div>
   </section>
 
   <CTASection
-    title="Need a scoped recommendation?"
-    description="Share your current business priority and we can suggest a practical first scope."
+    title="Get a Practical First Scope"
+    description="Share your current priority and timeline. We will suggest a practical first scope."
     primaryLabel="Chat on WhatsApp"
     primaryHref={whatsappLink}
-    secondaryLabel="Use Contact Page"
-    secondaryHref="/contact"
+    secondaryLabel="Email Novalink"
+    secondaryHref={`mailto:${siteConfig.email}`}
   />
 </MainLayout>

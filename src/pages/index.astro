@@ -1,5 +1,4 @@
 ---
-import CTASection from '../components/CTASection.astro';
 import ContactWhatsAppCTA from '../components/ContactWhatsAppCTA.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import HeroSection from '../components/HeroSection.astro';
@@ -14,49 +13,64 @@ const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 
 <MainLayout>
   <HeroSection
-    eyebrow="SME Digital Solutions Partner"
-    title="Practical digital execution for SMEs"
-    description="Novalink Technologies helps businesses improve digital presence, conversion flow, and day-to-day execution across websites, commerce/payment implementation, search, and selected growth systems."
+    eyebrow="Practical Systems for SMEs"
+    title="Practical digital systems for SME execution"
+    description="Novalink helps SMEs improve conversion flow, operations, and implementation through websites, workflows, automation, and commerce/payment setup support."
     primaryAction={{ label: 'Chat on WhatsApp', href: whatsappLink }}
     secondaryAction={{ label: 'View Solutions', href: '/services' }}
   />
 
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">How Novalink Helps</h2>
+      <p class="mt-3 max-w-3xl text-base text-slate-600">
+        Start with one practical priority. We scope the first phase clearly, execute it properly, and build from results.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Why Businesses Work With Novalink</h2>
+      <p class="mt-3 max-w-3xl text-base text-slate-600">
+        Clear scope, direct communication, and technical implementation support that fits real operating constraints.
+      </p>
+    </div>
+  </section>
+
   <ServicesGrid
     heading="Core Solutions"
-    intro="Start with one scoped area or combine support tracks based on current business priorities."
+    intro="Quick summary of the four core solution areas. Click any card to view full scope."
     items={coreServices}
+    showBullets={false}
+    linkCards={true}
   />
 
   <section class="container-shell pt-12">
     <div class="panel p-6 sm:p-8">
-      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Commerce & Payment Enablement</h2>
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Typical Problems We Help Solve</h2>
       <p class="mt-3 max-w-3xl text-base text-slate-600">
-        Payment and checkout support is part of Novalink's practical execution scope, including e-commerce flow setup and implementation coordination.
+        We step in when digital execution is blocked by messy handoffs, manual work, unclear conversion flow, or disconnected tools.
       </p>
       <ul class="mt-4 space-y-2 text-sm text-slate-600">
-        <li>Checkout flow improvements</li>
-        <li>Payment integration guidance</li>
-        <li>Merchant onboarding support paths, including Atome</li>
+        <li>Manual process bottlenecks across sales and operations</li>
+        <li>Landing pages that fail to convert qualified traffic</li>
+        <li>Checkout or payment setup friction slowing activation</li>
+        <li>Disconnected tools creating weak customer handoffs</li>
       </ul>
     </div>
   </section>
 
   <TrustSection
-    heading="Why Teams Work With Novalink"
-    intro="Practical collaboration, clear scope, and delivery support built for SME teams."
+    heading="Practical Proof"
+    intro="A capability-based snapshot of how Novalink executes for SME teams."
     metrics={homeProofMetrics}
-  />
-
-  <CTASection
-    title="Need the Atome onboarding route?"
-    description="Use the dedicated Atome page for campaign-specific positioning while keeping Novalink's broader SME execution scope clear."
-    primaryLabel="Open Atome Page"
-    primaryHref="/atome"
-    secondaryLabel="General Contact"
-    secondaryHref="/contact"
   />
 
   <FAQAccordion items={homeFAQs} />
 
-  <ContactWhatsAppCTA />
+  <ContactWhatsAppCTA
+    heading="Discuss Your Next Step"
+    description="Send your current priority and timeline on WhatsApp. We will propose a practical first step."
+  />
 </MainLayout>

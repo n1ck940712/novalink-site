@@ -5,9 +5,9 @@ export const siteConfig = {
   // Leave empty string to keep text/monogram fallback in navbar.
   logoSrc: '/novalink-logo-long.png',
   logoAlt: 'Novalink Technologies',
-  defaultTitle: 'Novalink Technologies | Practical Digital Solutions for SMEs',
+  defaultTitle: 'Novalink Technologies | Practical Systems for SME Growth and Operations',
   defaultDescription:
-    'Novalink Technologies supports SMEs with practical digital execution across websites, commerce and payment integration, search visibility, and selected growth systems.',
+    'Novalink helps SMEs improve conversion, operations, and execution through websites, automation, and practical digital systems.',
   siteUrl: 'https://novalink-technologies.com',
   locale: 'en_US',
   email: 'sale.novalink@gmail.com',
