@@ -1,5 +1,5 @@
 ---
-import { navigationLinks } from '../content/site-data';
+import { secondaryNavigationLinks } from '../content/site-data';
 import { siteConfig, socialLinks } from '../config/site';
 
 const year = new Date().getFullYear();
@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
     <div>
       <p class="text-sm font-semibold uppercase tracking-wide text-slate-800">Explore</p>
       <ul class="mt-3 space-y-2 text-sm text-slate-600">
-        {navigationLinks.map((item) => (
+        {secondaryNavigationLinks.map((item) => (
           <li><a class="hover:text-slate-900" href={item.href}>{item.label}</a></li>
         ))}
       </ul>

@@ -1,76 +1,158 @@
 ---
-import ContactWhatsAppCTA from '../components/ContactWhatsAppCTA.astro';
-import FAQAccordion from '../components/FAQAccordion.astro';
 import HeroSection from '../components/HeroSection.astro';
-import ServicesGrid from '../components/ServicesGrid.astro';
 import TrustSection from '../components/TrustSection.astro';
 import { siteConfig } from '../config/site';
-import { coreServices, homeFAQs, homeProofMetrics } from '../content/site-data';
+import { coreServices, homeProofMetrics } from '../content/site-data';
 import MainLayout from '../layouts/MainLayout.astro';
 
 const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 ---
 
-<MainLayout>
+<MainLayout
+  description="Novalink helps SMEs improve conversion flow, operations, and execution through websites, automation, and practical digital systems."
+>
   <HeroSection
     eyebrow="Practical Systems for SMEs"
     title="Practical digital systems for SME execution"
     description="Novalink helps SMEs improve conversion flow, operations, and implementation through websites, workflows, automation, and commerce/payment setup support."
     primaryAction={{ label: 'Chat on WhatsApp', href: whatsappLink }}
-    secondaryAction={{ label: 'View Solutions', href: '/services' }}
+    secondaryAction={{ label: 'View Solutions', href: '#services' }}
   />
 
-  <section class="container-shell pt-12">
-    <div class="panel p-6 sm:p-8">
-      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">How Novalink Helps</h2>
-      <p class="mt-3 max-w-3xl text-base text-slate-600">
-        Start with one practical priority. We scope the first phase clearly, execute it properly, and build from results.
-      </p>
+  <section id="overview" class="container-shell home-section home-section-after-hero scroll-mt-28">
+    <div class="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+      <div class="panel p-6 sm:p-8">
+        <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">How Novalink Helps</h2>
+        <p class="mt-3 max-w-3xl text-base text-slate-600">
+          Start with one practical priority. We scope the first phase clearly, execute it properly, and build from results.
+        </p>
+      </div>
+
+      <div class="panel p-6 sm:p-8">
+        <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Typical Problems We Help Solve</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-600">
+          <li>Manual process bottlenecks across sales and operations</li>
+          <li>Landing pages that fail to convert qualified traffic</li>
+          <li>Checkout or payment setup friction slowing activation</li>
+          <li>Disconnected tools creating weak customer handoffs</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section class="container-shell pt-12">
-    <div class="panel p-6 sm:p-8">
-      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Why Businesses Work With Novalink</h2>
-      <p class="mt-3 max-w-3xl text-base text-slate-600">
-        Clear scope, direct communication, and technical implementation support that fits real operating constraints.
+  <section id="services" class="container-shell home-section scroll-mt-28">
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">How Novalink helps</h2>
+      <p class="max-w-3xl text-base text-slate-600">
+        Practical support across four focused areas.
       </p>
+    </div>
+
+    <div class="mt-8 grid gap-5 md:grid-cols-2">
+      {coreServices.map((service) => (
+        <article class="panel h-full p-6">
+          <h3 class="text-lg font-semibold text-slate-900">{service.title}</h3>
+          <p class="mt-3 text-sm text-slate-700">{service.summary}</p>
+        </article>
+      ))}
     </div>
   </section>
 
-  <ServicesGrid
-    heading="Core Solutions"
-    intro="Quick summary of the four core solution areas. Click any card to view full scope."
-    items={coreServices}
-    showBullets={false}
-    linkCards={true}
-  />
+  <!-- TODO show trust section when its more polished -->
+  <section id="why-novalink" class="home-section home-section-emphasis scroll-mt-28">
+    <TrustSection
+      heading="Why Businesses Work With Novalink"
+      intro="Clear scope, direct communication, and practical technical support that fits real business needs."
+      metrics={homeProofMetrics}
+    />
+  </section>
 
-  <section class="container-shell pt-12">
-    <div class="panel p-6 sm:p-8">
-      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Typical Problems We Help Solve</h2>
-      <p class="mt-3 max-w-3xl text-base text-slate-600">
-        We step in when digital execution is blocked by messy handoffs, manual work, unclear conversion flow, or disconnected tools.
-      </p>
-      <ul class="mt-4 space-y-2 text-sm text-slate-600">
-        <li>Manual process bottlenecks across sales and operations</li>
-        <li>Landing pages that fail to convert qualified traffic</li>
-        <li>Checkout or payment setup friction slowing activation</li>
-        <li>Disconnected tools creating weak customer handoffs</li>
-      </ul>
+  <section id="about" class="container-shell home-section scroll-mt-28">
+    <div class="grid gap-5 lg:grid-cols-[1fr_0.95fr]">
+      <div class="panel p-6 sm:p-8">
+        <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">How We Work</h2>
+        <p class="mt-3 max-w-3xl text-base text-slate-600">
+          We define the immediate business constraint, scope a practical first phase, implement with clear ownership, and refine based on what actually improves operations or conversion.
+        </p>
+        <!-- <ol class="mt-4 space-y-2 text-sm text-slate-600">
+          <li>1. Define the main execution constraint and immediate goal.</li>
+          <li>2. Scope a practical first phase with clear ownership.</li>
+          <li>3. Implement and monitor what changes in operations or conversion flow.</li>
+          <li>4. Set clear next steps only after the first scope is working.</li>
+        </ol> -->
+      </div>
+
+      <div class="panel p-6 sm:p-8">
+        <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Best-Fit Businesses</h2>
+        <p class="mt-3 max-w-3xl text-base text-slate-600">
+          SMEs that want practical implementation support, clear next steps, and operator-level follow-through.
+        </p>
+        <p class="mt-3 max-w-3xl text-sm text-slate-600">
+          The work fits teams that need useful digital systems working in real operating conditions, not presentation-only output.
+        </p>
+      </div>
     </div>
   </section>
 
-  <TrustSection
-    heading="Practical Proof"
-    intro="A capability-based snapshot of how Novalink executes for SME teams."
-    metrics={homeProofMetrics}
-  />
+  <section id="contact" class="container-shell home-section home-section-final scroll-mt-28">
+    <div class="panel px-6 py-8 sm:px-8 sm:py-10">
+      <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+        <div>
+          <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Get in touch</h2>
+          <p class="mt-4 max-w-3xl text-base text-slate-600">
+            Send us your business details and ideas and we'll come back to you with clear next steps.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">Chat on WhatsApp</a>
+            <a href={`mailto:${siteConfig.email}`} class="btn-secondary text-center">Email Novalink</a>
+          </div>
+        </div>
 
-  <FAQAccordion items={homeFAQs} />
-
-  <ContactWhatsAppCTA
-    heading="Discuss Your Next Step"
-    description="Send your current priority and timeline on WhatsApp. We will propose a practical first step."
-  />
+        <div class="rounded-[1.75rem] border border-slate-200 bg-slate-100 p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Contact Details</h3>
+          <div class="mt-4 space-y-4 text-sm text-slate-700">
+            <p>
+              <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">WhatsApp</span>
+              <a
+                class="mt-1 inline-block font-medium text-slate-900 hover:text-brand-800"
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {siteConfig.phoneDisplay}
+              </a>
+            </p>
+            <p>
+              <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">Email</span>
+              <a class="mt-1 inline-block font-medium text-slate-900 hover:text-brand-800" href={`mailto:${siteConfig.email}`}>
+                {siteConfig.email}
+              </a>
+            </p>
+            <p>
+              <span class="block text-xs font-semibold uppercase tracking-wide text-brand-700">Location</span>
+              <span class="mt-1 inline-block font-medium text-slate-900">{siteConfig.city}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  .home-section {
+    padding-top: clamp(4.5rem, 8vw, 6rem);
+  }
+
+  .home-section-after-hero {
+    padding-top: clamp(5.5rem, 10vw, 7.5rem);
+  }
+
+  .home-section-emphasis {
+    padding-top: clamp(5.5rem, 11vw, 8rem);
+  }
+
+  .home-section-final {
+    padding-top: clamp(6rem, 12vw, 8.5rem);
+  }
+</style>

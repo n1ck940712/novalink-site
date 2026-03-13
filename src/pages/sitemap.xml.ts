@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { siteConfig } from '../config/site';
 
-const staticRoutes = ['/', '/services', '/about', '/contact', '/atome', '/privacy', '/terms'];
+const staticRoutes = ['/', '/services', '/about', '/contact', '/privacy', '/terms'];
 
 export const GET: APIRoute = () => {
   const lastmod = new Date().toISOString();

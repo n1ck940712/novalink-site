@@ -21,7 +21,15 @@ export interface ProofMetric {
   value: string;
 }
 
-export const navigationLinks: NavLink[] = [
+export const primaryNavigationLinks: NavLink[] = [
+  { label: 'Overview', href: '#overview' },
+  { label: 'Services', href: '#services' },
+  { label: 'Why Novalink', href: '#why-novalink' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
+];
+
+export const secondaryNavigationLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'Solutions', href: '/services' },
   { label: 'About', href: '/about' },
@@ -81,9 +89,9 @@ export const coreServices: ServiceItem[] = [
 ];
 
 export const homeProofMetrics: ProofMetric[] = [
-  { label: 'Execution Model', value: 'Scoped first phase, clear ownership, practical follow-through' },
-  { label: 'Technical Focus', value: 'Web, workflows, integrations, and commerce setup support' },
-  { label: 'Operating Reality', value: 'Built for straightforward projects and messy handoff situations' },
+  { label: 'Start focused', value: 'Most projects begin with a practical first phase and clear next steps.' },
+  { label: 'Solve the real problem', value: 'Web, workflows, integrations, and commerce-related support where it matters.' },
+  { label: 'Work with reality', value: 'Built for lean teams, messy processes, and real operating constraints.' },
 ];
 
 export const homeFAQs: FAQItem[] = [

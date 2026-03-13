@@ -1,5 +1,5 @@
 ---
-import { navigationLinks } from '../content/site-data';
+import { primaryNavigationLinks } from '../content/site-data';
 import { siteConfig } from '../config/site';
 
 interface Props {
@@ -7,8 +7,8 @@ interface Props {
 }
 
 const { currentPath = '/' } = Astro.props;
-const isActive = (href: string) =>
-  currentPath === href || (href !== '/' && currentPath.startsWith(`${href}/`));
+const isHomePage = currentPath === '/';
+const resolveHref = (href: string) => (isHomePage ? href : `/${href}`);
 const hasLogoImage = Boolean(siteConfig.logoSrc);
 ---
 
@@ -27,15 +27,10 @@ const hasLogoImage = Boolean(siteConfig.logoSrc);
       </a>
 
       <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
-        {navigationLinks.map((link) => (
+        {primaryNavigationLinks.map((link) => (
           <a
-            href={link.href}
-            aria-current={isActive(link.href) ? 'page' : undefined}
-            class={`rounded-full px-4 py-2 text-sm font-medium transition ${
-              isActive(link.href)
-                ? 'bg-brand-100 text-brand-800'
-                : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
-            }`}
+            href={resolveHref(link.href)}
+            class="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
           >
             {link.label}
           </a>
@@ -56,15 +51,10 @@ const hasLogoImage = Boolean(siteConfig.logoSrc);
         </summary>
         <div class="absolute right-4 top-[4.5rem] w-64 rounded-2xl border border-slate-200 bg-white p-3 shadow-lg">
           <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
-            {navigationLinks.map((link) => (
+            {primaryNavigationLinks.map((link) => (
               <a
-                href={link.href}
-                aria-current={isActive(link.href) ? 'page' : undefined}
-                class={`rounded-xl px-3 py-2 text-sm font-medium ${
-                  isActive(link.href)
-                    ? 'bg-brand-100 text-brand-800'
-                    : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
-                }`}
+                href={resolveHref(link.href)}
+                class="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900"
               >
                 {link.label}
               </a>
