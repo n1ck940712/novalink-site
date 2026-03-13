@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import AtomeLandingLayout from '../layouts/AtomeLandingLayout.astro';
 import { siteConfig } from '../config/site';
 
 const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
@@ -23,6 +23,18 @@ const content = {
       primaryCta: 'Semak kelayakan',
       secondaryText: 'WhatsApp untuk maklumat lanjut',
     },
+    explainer: {
+      title: 'Apa itu Atome Buy Now Pay Later?',
+      bullets: [
+        'Pelanggan boleh membuat pembelian sekarang dan membayar secara ansuran',
+        'Atome Malaysia menerangkan pilihan 3 ansuran tanpa faedah',
+        'Bagi sesetengah transaksi, pilihan tempoh lebih panjang mungkin tersedia dengan caj yang dipaparkan dalam aplikasi',
+        'Bayaran pertama dibuat semasa pembelian, dan bayaran seterusnya dijadualkan dalam aplikasi',
+        'Untuk merchant, ini menambah satu lagi pilihan bayaran semasa checkout',
+      ],
+      linkLabel: 'Rujuk laman rasmi Atome Malaysia',
+      linkHref: 'https://www.atome.my/how-it-works',
+    },
     why: {
       title: 'Kenapa merchant pertimbangkan Atome',
       cards: [
@@ -39,13 +51,13 @@ const content = {
           body: 'Merchant boleh menerima panduan yang lebih tersusun tentang proses enquiry dan apa yang perlu disediakan seterusnya.',
         },
         {
-          title: 'Sesuai untuk bisnes yang ingin mencuba pilihan bayaran tambahan',
-          body: 'Satu pilihan untuk bisnes yang mahu menawarkan lebih banyak fleksibiliti bayaran kepada pelanggan.',
+          title: 'Sesuai untuk bisnes yang ingin tambah pilihan bayaran',
+          body: 'Pilihan tambahan untuk bisnes yang ingin memberikan pelanggan lebih fleksibiliti semasa pembayaran.',
         },
       ],
     },
     howItWorks: {
-      title: 'Cara ia berjalan',
+      title: 'Cara ia berfungsi',
       steps: [
         {
           title: 'Hantar enquiry',
@@ -68,10 +80,10 @@ const content = {
     suitableFor: {
       title: 'Sesuai untuk bisnes seperti…',
       bullets: [
-        'Bisnes yang mahu menawarkan pelanggan pilihan bayaran tambahan',
+        'Bisnes yang ingin menawarkan pelanggan pilihan bayaran tambahan',
         'Bisnes yang menguruskan pembelian di mana fleksibiliti bayaran mungkin membantu',
         'Merchant yang bersedia melalui proses semakan dan onboarding',
-        'Bisnes yang ingin mencuba pilihan bayaran tambahan secara lebih tersusun',
+        'Bisnes yang mahu menambah pilihan bayaran secara lebih tersusun',
       ],
     },
     prepare: {
@@ -83,40 +95,145 @@ const content = {
     },
     faq: {
       title: 'Soalan Lazim',
-      items: [
+      mainItems: [
         {
           question: 'Adakah Novalink sebahagian daripada Atome?',
           answer:
-            'Tidak. Novalink menyokong koordinasi enquiry merchant dan panduan onboarding. Novalink bukan sebahagian daripada pasukan dalaman Atome.',
+            'Tidak. Novalink membantu dari segi koordinasi enquiry merchant dan panduan onboarding. Novalink bukan sebahagian daripada pasukan dalaman Atome.',
         },
         {
           question: 'Adakah semua bisnes layak?',
-          answer: 'Tidak semestinya. Kesesuaian bergantung pada semakan dan keperluan pihak berkaitan.',
+          answer: 'Tidak semestinya. Kesesuaian bergantung kepada semakan dan keperluan pihak berkaitan.',
         },
         {
           question: 'Adakah enquiry ini menjamin kelulusan?',
           answer: 'Tidak. Enquiry awal tidak menjamin kelulusan. Kelayakan dan kelulusan tertakluk kepada semakan.',
         },
         {
-          question: 'Apa maklumat yang diperlukan untuk mula?',
+          question: 'Maklumat apa yang diperlukan untuk bermula?',
           answer:
             'Biasanya maklumat asas seperti nama bisnes, jenis bisnes, lokasi, dan saluran bisnes anda.',
         },
         {
-          question: 'Berapa lama untuk proses bermula?',
-          answer:
-            'Ia bergantung kepada maklumat yang diberikan dan langkah semakan seterusnya. WhatsApp kami untuk semakan awal.',
+          question: 'Adakah saya perlu bayar apa-apa untuk buat enquiry?',
+          answer: 'Tidak ada bayaran untuk semakan awal melalui enquiry.',
         },
         {
-          question: 'Adakah terdapat sebarang bayaran untuk buat enquiry?',
-          answer: 'Tiada bayaran untuk enquiry awal.',
+          question: 'Adakah saya perlukan hardware khas atau integration?',
+          answer:
+            'Tidak semestinya. Untuk kedai fizikal, Atome menggunakan aliran pembayaran berasaskan QR. Untuk kedai online, integration bergantung kepada platform dan saluran jualan anda.',
         },
         {
-          question: 'Bolehkah saya buat enquiry jika belum ada laman web?',
+          question: 'Bolehkah bisnes saya dipaparkan dalam app Atome?',
           answer:
-            'Boleh. Jika anda ada Facebook, Instagram, TikTok, atau saluran bisnes lain, anda masih boleh buat enquiry awal.',
+            'Ya. Atome mempunyai keupayaan untuk memaparkan merchant dalam app, tertakluk kepada proses dan keperluan mereka.',
+        },
+        {
+          question: 'Adakah setiap pelanggan akan mendapat limit yang sama?',
+          answer:
+            'Tidak. Kelayakan dan limit pelanggan boleh berbeza mengikut profil pengguna, jenis pembayaran, dan penilaian Atome.',
+        },
+        {
+          question: 'Bagaimana yuran merchant ditentukan?',
+          answer:
+            'Tiada setup fee. Struktur merchant adalah berdasarkan MDR per transaksi, dan terma komersial akan dijelaskan semasa proses onboarding.',
         },
       ],
+      supportLine:
+        'Perlu bantuan tentang yuran, onboarding, kesesuaian bisnes, atau kedai online? WhatsApp kami untuk semakan awal.',
+      moreTitle: 'Lebih banyak soalan merchant',
+      moreGroups: [
+        {
+          title: 'Yuran & terma komersial',
+          items: [
+            {
+              question: 'Apa yang membezakan Atome dengan pilihan pay-later lain?',
+              answer:
+                'Atome bukan sekadar satu lagi pilihan bayaran di checkout. Merchant juga berpeluang dipaparkan dalam app Atome, disokong dengan kempen atau voucher tertentu, dan lebih mudah diakses oleh pengguna debit card yang mungkin tidak menggunakan credit card.',
+            },
+            {
+              question: 'Bagaimana jika pelanggan tidak bayar semula kepada Atome?',
+              answer:
+                'Pengurusan bayaran balik pelanggan adalah di bawah proses Atome. Merchant akan dijelaskan tentang aliran settlement dan terma berkaitan semasa onboarding.',
+            },
+            {
+              question: 'Berapa ramai orang menggunakan Atome?',
+              answer:
+                'Atome mempunyai pangkalan pengguna yang besar di Malaysia dan rantau ini. Selain fungsi checkout, merchant juga berpeluang mendapat visibility dalam app Atome.',
+            },
+            {
+              question: 'Berapa yuran Atome?',
+              answer:
+                'Untuk merchant yang kami uruskan, struktur yang biasa kami jelaskan ialah 6% + RM1 bagi setiap transaksi. Tiada setup fee dan tiada monthly fee. Pengesahan akhir masih tertakluk kepada terma onboarding semasa.',
+            },
+            {
+              question: 'Bolehkah merchant dapat kadar lebih rendah daripada 6%?',
+              answer:
+                'Ya, dalam sesetengah keadaan. Merchant dengan GMV tinggi, banyak cawangan, atau profil jenama yang kuat mungkin boleh dirundingkan kadar yang lebih baik dengan Atome.',
+            },
+            {
+              question: 'Adakah setiap pelanggan mempunyai credit limit yang sama?',
+              answer:
+                'Tidak. Limit pelanggan berbeza mengikut profil pengguna, jenis pembayaran, dan aktiviti pembayaran mereka. Jangan nyatakan jumlah tetap pada halaman ini.',
+            },
+          ],
+        },
+        {
+          title: 'Setup & onboarding',
+          items: [
+            {
+              question: 'Adakah onboarding susah?',
+              answer:
+                'Tidak rumit jika maklumat asas dan dokumen disediakan dengan betul. Kami bantu merchant faham langkah awal dan proses seterusnya.',
+            },
+            {
+              question: 'Adakah saya perlu signboard yang proper?',
+              answer:
+                'Ya. Atome biasanya memerlukan signboard kedai yang proper, bukan sekadar banner. Jika merchant nampak established tetapi belum memenuhi syarat ini, kami boleh bantu semak dahulu.',
+            },
+            {
+              question: 'Adakah saya perlu cashier counter?',
+              answer: 'Ya. Atome biasanya memerlukan setup cashier counter untuk kedai fizikal.',
+            },
+            {
+              question: 'Berapa lama assessment biasanya ambil masa?',
+              answer:
+                'Biasanya sehingga 2 minggu sebelum kontrak sedia untuk ditandatangani, bergantung kepada dokumen dan proses semakan.',
+            },
+          ],
+        },
+        {
+          title: 'Kesesuaian bisnes',
+          items: [
+            {
+              question: 'Kenapa bukan biar pelanggan guna installment credit card sahaja?',
+              answer:
+                'Ramai pelanggan tidak mempunyai credit card, terutamanya golongan yang lebih muda. Atome memberi satu lagi pilihan bayaran ansuran melalui app, jadi bisnes anda tidak hanya bergantung kepada pengguna credit card.',
+            },
+            {
+              question: 'Boleh mohon kalau bisnes saya di luar Malaysia?',
+              answer: 'Tidak. Atome Malaysia hanya menerima bisnes yang berdaftar di Malaysia.',
+            },
+            {
+              question: 'Bagaimana jika saya menjalankan kedai online?',
+              answer:
+                'Boleh, tetapi laman anda perlu mempunyai checkout page yang proper. Dalam sesetengah kes, Atome mungkin meminta screenshot atau live demo semasa assessment.',
+            },
+            {
+              question: 'Adakah Atome akan minta product list?',
+              answer:
+                'Kadang-kadang ya, terutamanya semasa assessment. Merchant sepatutnya bersedia untuk menyediakan SKU atau product list jika diminta.',
+            },
+            {
+              question: 'Bagaimana jika bisnes saya dalam kategori berisiko tinggi?',
+              answer:
+                'Ia mungkin memerlukan semakan yang lebih teliti. Atome mungkin meminta dokumen tambahan atau kelulusan tambahan bergantung kepada kategori bisnes.',
+            },
+          ],
+        },
+      ],
+      supportNote:
+        'Untuk maklumat lanjut, rujuk deck Atome dalam folder getting started atau WhatsApp kami untuk semakan awal.',
     },
     note: {
       title: 'Nota penting',
@@ -143,6 +260,18 @@ const content = {
         'We support merchants through the full process — from enquiry to onboarding.',
       primaryCta: 'Check eligibility',
       secondaryText: 'WhatsApp for more information',
+    },
+    explainer: {
+      title: 'What is Atome Buy Now Pay Later?',
+      bullets: [
+        'Customers can make a purchase now and pay in instalments',
+        'Atome Malaysia explains its offering around 3 interest-free payments',
+        'For some transactions, longer-tenure options may also be available with fees shown clearly in the app',
+        'The first payment is made at the point of purchase, and the remaining payments are scheduled in the app',
+        'For merchants, this adds another payment option at checkout',
+      ],
+      linkLabel: 'Refer to the official Atome Malaysia website',
+      linkHref: 'https://www.atome.my/en-my/how-it-works',
     },
     why: {
       title: 'Why merchants may consider Atome',
@@ -204,7 +333,7 @@ const content = {
     },
     faq: {
       title: 'FAQ',
-      items: [
+      mainItems: [
         {
           question: 'Is Novalink part of Atome?',
           answer:
@@ -224,20 +353,125 @@ const content = {
             'Usually basic information such as your business name, business type, location, and business channels.',
         },
         {
-          question: 'How soon can the process begin?',
-          answer:
-            'That depends on the information provided and the next review steps. Contact us on WhatsApp for an initial check.',
-        },
-        {
           question: 'Is there any fee to make an enquiry?',
           answer: 'There is no fee for an initial enquiry.',
         },
         {
-          question: 'Can I enquire if I do not have a website yet?',
+          question: 'Do I need special hardware or integration?',
           answer:
-            'Yes. If you have Facebook, Instagram, TikTok, or other business channels, you may still make an initial enquiry.',
+            'Not necessarily. For physical stores, Atome uses a QR-based payment flow. For online stores, integration depends on your platform and sales channels.',
+        },
+        {
+          question: 'Can my business appear in the Atome app?',
+          answer:
+            'Yes. Atome has the ability to feature merchants in the app, subject to their process and requirements.',
+        },
+        {
+          question: 'Will every customer have the same spending limit?',
+          answer:
+            'No. Customer eligibility and spending limits can vary depending on the user profile, payment type, and Atome’s assessment.',
+        },
+        {
+          question: 'How is merchant pricing determined?',
+          answer:
+            'There is no setup fee. Merchant pricing is based on MDR per transaction, and the commercial terms will be clarified during onboarding.',
         },
       ],
+      supportLine:
+        'Need help with fees, onboarding, business suitability, or online store requirements? WhatsApp us for an initial check.',
+      moreTitle: 'More merchant questions',
+      moreGroups: [
+        {
+          title: 'Fees & commercial terms',
+          items: [
+            {
+              question: 'What makes Atome different from other pay-later options?',
+              answer:
+                'Atome is not just another checkout payment option. Merchants may also gain visibility inside the Atome app, benefit from selected campaigns or vouchers, and be more accessible to debit-card users who may not use credit cards.',
+            },
+            {
+              question: 'What happens if the customer does not pay Atome back?',
+              answer:
+                'Customer repayment handling is managed under Atome’s own process. Merchant settlement flow and related terms will be clarified during onboarding.',
+            },
+            {
+              question: 'How many people use Atome?',
+              answer:
+                'Atome has a large user base in Malaysia and across the region. Beyond checkout, merchants may also gain visibility inside the Atome app.',
+            },
+            {
+              question: 'What is the Atome fee?',
+              answer:
+                'For the merchants we typically handle, the fee structure we usually explain is 6% + RM1 per transaction. There is no setup fee and no monthly fee. Final confirmation remains subject to onboarding terms.',
+            },
+            {
+              question: 'Can merchants get a lower rate than 6%?',
+              answer:
+                'Yes, in some cases. Merchants with high GMV, multiple branches, or strong brand profile may be able to negotiate a better rate with Atome.',
+            },
+            {
+              question: 'Will every customer have the same credit limit?',
+              answer:
+                'No. Customer limits vary depending on the user profile, payment type, and repayment activity. Do not state fixed amounts on this page.',
+            },
+          ],
+        },
+        {
+          title: 'Setup & onboarding',
+          items: [
+            {
+              question: 'Is onboarding difficult?',
+              answer:
+                'Not difficult if the basic information and documents are prepared properly. We help merchants understand the first steps and what comes next.',
+            },
+            {
+              question: 'Do I need a proper signboard?',
+              answer:
+                'Yes. Atome usually requires a proper shop signboard, not just a banner. If the merchant appears established but has not met this yet, we can help check first.',
+            },
+            {
+              question: 'Do I need a cashier counter?',
+              answer: 'Yes. Atome usually requires a cashier counter setup for physical stores.',
+            },
+            {
+              question: 'How long does assessment usually take?',
+              answer:
+                'Usually up to 2 weeks before the contract is ready for signing, depending on documents and the review process.',
+            },
+          ],
+        },
+        {
+          title: 'Business suitability',
+          items: [
+            {
+              question: 'Why not just rely on credit card instalments?',
+              answer:
+                'Many customers do not have credit cards, especially younger users. Atome gives them another instalment payment option through the app, so your business is not limited to credit card users only.',
+            },
+            {
+              question: 'Can I apply if my business is outside Malaysia?',
+              answer: 'No. Atome Malaysia only accepts businesses registered in Malaysia.',
+            },
+            {
+              question: 'What if I run an online shop?',
+              answer:
+                'You may still apply, but your site should have a proper checkout page. In some cases, Atome may request screenshots or a live demo during assessment.',
+            },
+            {
+              question: 'Will Atome ask for my product list?',
+              answer:
+                'Sometimes, especially during assessment. Merchants should be ready to provide SKU or product lists if requested.',
+            },
+            {
+              question: 'What if my business is in a higher-risk category?',
+              answer:
+                'This may require a more thorough review. Atome may request additional documents or approvals depending on the business category.',
+            },
+          ],
+        },
+      ],
+      supportNote:
+        'For more information, refer to the Atome deck in the getting started folder or WhatsApp us for an initial check.',
     },
     note: {
       title: 'Important note',
@@ -258,35 +492,20 @@ const t = content[language];
 const pageLang = language === 'bm' ? 'ms' : 'en';
 ---
 
-<MainLayout title={t.metaTitle} description={t.metaDescription} lang={pageLang} noIndex={true}>
+<AtomeLandingLayout
+  title={t.metaTitle}
+  description={t.metaDescription}
+  lang={pageLang}
+  language={language}
+  primaryCtaLabel={t.hero.primaryCta}
+  primaryCtaHref={whatsappLink}
+  noIndex={true}
+>
   <section class="container-shell campaign-hero-section">
     <div class="panel overflow-hidden">
       <div class="grid gap-8 px-6 py-8 sm:px-10 sm:py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div>
-          <div class="flex items-center justify-between gap-3">
-            <div class="inline-flex rounded-full border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Language toggle">
-              <a
-                href="/atome"
-                aria-current={language === 'bm' ? 'page' : undefined}
-                class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
-                  language === 'bm' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
-                }`}
-              >
-                BM
-              </a>
-              <a
-                href="/atome/en"
-                aria-current={language === 'en' ? 'page' : undefined}
-                class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
-                  language === 'en' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
-                }`}
-              >
-                EN
-              </a>
-            </div>
-          </div>
-
-          <h1 class="mt-5 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">{t.hero.headline}</h1>
+          <h1 class="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">{t.hero.headline}</h1>
           <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-700">{t.hero.subheadline}</p>
           <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">{t.hero.supportLine}</p>
 
@@ -306,6 +525,30 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
             loading="eager"
           />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-shell campaign-section campaign-section-compact">
+    <div class="campaign-explainer rounded-3xl border border-slate-200/80 bg-white/70 px-6 py-6 sm:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.explainer.title}</h2>
+        <ul class="mt-4 space-y-2.5 text-sm leading-relaxed text-slate-700">
+          {t.explainer.bullets.map((bullet) => (
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-500" aria-hidden="true"></span>
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={t.explainer.linkHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-4 inline-flex text-sm font-medium text-slate-600 transition hover:text-slate-900"
+        >
+          {t.explainer.linkLabel}
+        </a>
       </div>
     </div>
   </section>
@@ -376,7 +619,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
   <section class="container-shell campaign-section campaign-section-separated" id="faq">
     <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.faq.title}</h2>
     <div class="mt-6 space-y-3">
-      {t.faq.items.map((item) => (
+      {t.faq.mainItems.map((item) => (
         <details class="panel group px-5 py-4">
           <summary class="cursor-pointer list-none text-sm font-semibold text-slate-900 marker:content-none">
             <span class="inline-flex w-full items-start justify-between gap-4">
@@ -388,6 +631,40 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
         </details>
       ))}
     </div>
+
+    <p class="mt-6 max-w-3xl text-sm leading-relaxed text-slate-600">{t.faq.supportLine}</p>
+
+    <details class="campaign-faq-secondary mt-6 group rounded-3xl border border-slate-200 bg-slate-50/85 p-5 sm:p-6">
+      <summary class="cursor-pointer list-none text-sm font-semibold text-slate-900 marker:content-none">
+        <span class="inline-flex w-full items-center justify-between gap-4">
+          <span>{t.faq.moreTitle}</span>
+          <span class="text-brand-700 transition group-open:rotate-45">+</span>
+        </span>
+      </summary>
+
+      <div class="mt-5 space-y-5">
+        {t.faq.moreGroups.map((group) => (
+          <section class="space-y-3">
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{group.title}</h3>
+            <div class="space-y-2.5">
+              {group.items.map((item) => (
+                <details class="group rounded-2xl border border-slate-200 bg-white px-4 py-3">
+                  <summary class="cursor-pointer list-none text-sm font-semibold text-slate-900 marker:content-none">
+                    <span class="inline-flex w-full items-start justify-between gap-4">
+                      <span>{item.question}</span>
+                      <span class="mt-0.5 text-brand-700 transition group-open:rotate-45">+</span>
+                    </span>
+                  </summary>
+                  <p class="pt-3 text-sm leading-relaxed text-slate-600">{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <p class="text-sm leading-relaxed text-slate-600">{t.faq.supportNote}</p>
+      </div>
+    </details>
   </section>
 
   <section class="container-shell campaign-section campaign-section-separated">
@@ -417,7 +694,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
       </div>
     </div>
   </section>
-</MainLayout>
+</AtomeLandingLayout>
 
 <style>
   .campaign-hero-section {
@@ -432,11 +709,19 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     padding-top: clamp(2.5rem, 4.5vw, 3.5rem);
   }
 
+  .campaign-section-compact {
+    padding-top: clamp(2rem, 4vw, 2.75rem);
+  }
+
   .campaign-section-separated {
     padding-top: clamp(4rem, 7vw, 5rem);
   }
 
   .campaign-compact-panel {
     padding: clamp(1.5rem, 3vw, 1.875rem);
+  }
+
+  .campaign-explainer {
+    box-shadow: 0 10px 24px -22px rgba(15, 23, 42, 0.45);
   }
 </style>

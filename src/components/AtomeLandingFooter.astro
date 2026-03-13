@@ -1,0 +1,75 @@
+---
+import { siteConfig } from '../config/site';
+
+interface Props {
+  language?: 'bm' | 'en';
+}
+
+const { language = 'bm' } = Astro.props;
+const year = new Date().getFullYear();
+const hasLogoImage = Boolean(siteConfig.logoSrc);
+
+const copy =
+  language === 'bm'
+    ? {
+        description: 'Novalink menyediakan sokongan praktikal untuk enquiry merchant, semakan awal, dan panduan onboarding.',
+        emailLabel: 'E-mel',
+        whatsappLabel: 'WhatsApp',
+        privacyLabel: 'Dasar Privasi',
+        termsLabel: 'Terma Perkhidmatan',
+        homeLabel: 'Laman utama Novalink',
+      }
+    : {
+        description: 'Novalink provides practical support for merchant enquiry, initial checks, and onboarding guidance.',
+        emailLabel: 'Email',
+        whatsappLabel: 'WhatsApp',
+        privacyLabel: 'Privacy Policy',
+        termsLabel: 'Terms of Service',
+        homeLabel: 'Novalink main site',
+      };
+---
+
+<footer class="border-t border-slate-200/80 bg-white/95">
+  <div class="container-shell py-8">
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+        <div class="max-w-xl">
+          <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-900">
+            {hasLogoImage ? (
+              <img src={siteConfig.logoSrc} alt={siteConfig.logoAlt} class="h-8 w-auto max-w-[11rem] sm:h-9 sm:max-w-none" />
+            ) : (
+              <>
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">NL</span>
+                {siteConfig.legalName}
+              </>
+            )}
+          </a>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">{copy.description}</p>
+        </div>
+
+        <div class="flex flex-col gap-2 text-sm text-slate-600 md:items-end">
+          <a class="transition hover:text-slate-900" href={`mailto:${siteConfig.email}`}>
+            {copy.emailLabel}: {siteConfig.email}
+          </a>
+          <a
+            class="transition hover:text-slate-900"
+            href={`https://wa.me/${siteConfig.phoneE164}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {copy.whatsappLabel}: {siteConfig.phoneDisplay}
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3 border-t border-slate-200 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {year} {siteConfig.legalName}. All rights reserved.</p>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <a href="/privacy" class="transition hover:text-slate-800">{copy.privacyLabel}</a>
+          <a href="/terms" class="transition hover:text-slate-800">{copy.termsLabel}</a>
+          <a href="/" class="transition hover:text-slate-800">{copy.homeLabel}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

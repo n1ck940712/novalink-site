@@ -1,0 +1,64 @@
+---
+import { siteConfig } from '../config/site';
+
+interface Props {
+  language?: 'bm' | 'en';
+  primaryCtaLabel: string;
+  primaryCtaHref: string;
+}
+
+const { language = 'bm', primaryCtaLabel, primaryCtaHref } = Astro.props;
+
+const hasLogoImage = Boolean(siteConfig.logoSrc);
+const isExternalCta = /^https?:\/\//.test(primaryCtaHref);
+const homeLabel = language === 'bm' ? 'Laman utama Novalink' : 'Novalink home';
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/92 backdrop-blur">
+  <div class="container-shell py-4">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <a href="/" aria-label={homeLabel} class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-900">
+        {hasLogoImage ? (
+          <img src={siteConfig.logoSrc} alt={siteConfig.logoAlt} class="h-8 w-auto max-w-[11rem] sm:h-9 sm:max-w-none" />
+        ) : (
+          <>
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">NL</span>
+            {siteConfig.name}
+          </>
+        )}
+      </a>
+
+      <div class="ml-auto flex items-center gap-2 sm:gap-3">
+        <div class="inline-flex rounded-full border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Language toggle">
+          <a
+            href="/atome"
+            aria-current={language === 'bm' ? 'page' : undefined}
+            class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+              language === 'bm' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
+            }`}
+          >
+            BM
+          </a>
+          <a
+            href="/atome/en"
+            aria-current={language === 'en' ? 'page' : undefined}
+            class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+              language === 'en' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
+            }`}
+          >
+            EN
+          </a>
+        </div>
+
+        <a
+          href={primaryCtaHref}
+          class="btn-primary px-4 py-2.5 text-sm"
+          target={isExternalCta ? '_blank' : undefined}
+          rel={isExternalCta ? 'noopener noreferrer' : undefined}
+        >
+          {primaryCtaLabel}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
