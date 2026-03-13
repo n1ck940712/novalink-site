@@ -1,0 +1,59 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Retail service counter illustration</title>
+  <desc id="desc">A local shop scene with a merchant serving a customer at a payment counter.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="840" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F2EA"/>
+      <stop offset="1" stop-color="#F2F6FB"/>
+    </linearGradient>
+    <linearGradient id="counter" x1="130" y1="390" x2="820" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D78A50"/>
+      <stop offset="1" stop-color="#BE6D3C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="720" rx="44" fill="url(#bg)"/>
+  <circle cx="760" cy="120" r="62" fill="#FFE4C4" opacity="0.68"/>
+  <circle cx="180" cy="130" r="44" fill="#F4D8BF" opacity="0.74"/>
+
+  <rect x="120" y="240" width="720" height="320" rx="32" fill="#FFFDF9" stroke="#ECDCCB" stroke-width="4"/>
+  <rect x="186" y="288" width="188" height="136" rx="18" fill="#EFE4D5"/>
+  <rect x="418" y="284" width="202" height="16" rx="8" fill="#E5D2BB"/>
+  <rect x="418" y="316" width="174" height="12" rx="6" fill="#EFDCC4"/>
+  <rect x="418" y="344" width="150" height="12" rx="6" fill="#EFDCC4"/>
+
+  <rect x="134" y="390" width="694" height="186" rx="28" fill="url(#counter)"/>
+  <rect x="164" y="424" width="634" height="28" rx="14" fill="#F3D3B7" opacity="0.82"/>
+
+  <ellipse cx="622" cy="318" rx="52" ry="58" fill="#E9B58A"/>
+  <path d="M585 324C585 289 610 260 642 260C675 260 700 289 700 324V390H585V324Z" fill="#355C7D"/>
+  <circle cx="607" cy="314" r="6" fill="#1E293B"/>
+  <circle cx="637" cy="314" r="6" fill="#1E293B"/>
+  <path d="M604 336C614 348 629 348 639 336" stroke="#7F3B2A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M564 300C566 254 598 220 641 220C680 220 711 250 718 288C696 266 672 257 641 257C610 257 587 269 564 300Z" fill="#1F2937"/>
+  <path d="M622 258C632 246 646 241 663 241C680 241 694 247 704 258" stroke="#F8D8BC" stroke-width="4" stroke-linecap="round"/>
+
+  <ellipse cx="340" cy="336" rx="48" ry="54" fill="#E8B083"/>
+  <path d="M294 336C294 302 318 274 348 274C378 274 402 302 402 336V390H294V336Z" fill="#6E8E58"/>
+  <circle cx="322" cy="331" r="5" fill="#1E293B"/>
+  <circle cx="350" cy="331" r="5" fill="#1E293B"/>
+  <path d="M320 352C329 362 343 362 351 352" stroke="#7F3B2A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M292 318C294 278 322 245 359 245C388 245 414 263 425 292C403 278 380 272 353 272C328 272 307 286 292 318Z" fill="#2D3748"/>
+
+  <rect x="414" y="430" width="94" height="56" rx="10" fill="#1E293B"/>
+  <rect x="422" y="438" width="78" height="40" rx="6" fill="#F6F8FB"/>
+  <rect x="430" y="448" width="18" height="10" rx="4" fill="#BFC8D2"/>
+  <rect x="454" y="448" width="38" height="10" rx="4" fill="#D8DFE6"/>
+
+  <rect x="544" y="448" width="112" height="18" rx="9" fill="#FFE8D3"/>
+  <rect x="544" y="476" width="138" height="16" rx="8" fill="#FFE8D3"/>
+
+  <path d="M460 430C476 402 506 392 532 392C558 392 586 401 600 426" stroke="#F8E0CA" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="188" y="430" width="68" height="92" rx="14" fill="#325E7E"/>
+  <rect x="208" y="454" width="30" height="34" rx="7" fill="#F4F7FB"/>
+
+  <circle cx="756" cy="222" r="36" fill="#FCEDDE"/>
+  <path d="M735 222H777" stroke="#CF7D3D" stroke-width="8" stroke-linecap="round"/>
+  <path d="M756 201V243" stroke="#CF7D3D" stroke-width="8" stroke-linecap="round"/>
+</svg>

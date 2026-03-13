@@ -1,0 +1,420 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { siteConfig } from '../config/site';
+
+const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
+interface Props {
+  language?: 'bm' | 'en';
+}
+
+const { language = 'bm' } = Astro.props;
+
+const content = {
+  bm: {
+    metaTitle: 'Atome Merchant Enquiry',
+    metaDescription:
+      'Halaman enquiry merchant Atome untuk panduan langkah pertama, semakan awal, dan sokongan onboarding oleh Novalink.',
+    hero: {
+      headline: 'Mahu tawarkan Atome kepada pelanggan anda?',
+      subheadline:
+        'Kami bantu anda faham apa yang perlu disediakan — dan pastikan anda berjaya melalui proses ini.',
+      supportLine:
+        'Kami bantu merchant dari enquiry awal hingga onboarding selesai.',
+      primaryCta: 'Semak kelayakan',
+      secondaryText: 'WhatsApp untuk maklumat lanjut',
+    },
+    why: {
+      title: 'Kenapa merchant pertimbangkan Atome',
+      cards: [
+        {
+          title: 'Tawarkan pelanggan pilihan bayaran tambahan',
+          body: 'Beri pelanggan satu lagi cara untuk membayar semasa checkout, bergantung pada kesesuaian merchant dan transaksi.',
+        },
+        {
+          title: 'Bantu pelanggan buat keputusan untuk pembelian yang lebih besar',
+          body: 'Pilihan bayaran yang lebih fleksibel boleh membantu pelanggan berasa lebih selesa untuk meneruskan pembelian.',
+        },
+        {
+          title: 'Dapatkan panduan yang lebih jelas untuk langkah seterusnya',
+          body: 'Merchant boleh menerima panduan yang lebih tersusun tentang proses enquiry dan apa yang perlu disediakan seterusnya.',
+        },
+        {
+          title: 'Sesuai untuk bisnes yang ingin mencuba pilihan bayaran tambahan',
+          body: 'Satu pilihan untuk bisnes yang mahu menawarkan lebih banyak fleksibiliti bayaran kepada pelanggan.',
+        },
+      ],
+    },
+    howItWorks: {
+      title: 'Cara ia berjalan',
+      steps: [
+        {
+          title: 'Hantar enquiry',
+          body: 'Hubungi kami melalui WhatsApp untuk semakan awal.',
+        },
+        {
+          title: 'Kongsi maklumat asas bisnes',
+          body: 'Kami akan meminta butiran asas seperti jenis bisnes, lokasi, dan saluran bisnes anda.',
+        },
+        {
+          title: 'Terima panduan langkah seterusnya',
+          body: 'Jika bisnes anda sesuai, anda akan menerima panduan tentang apa yang perlu disediakan dan apa yang akan berlaku seterusnya.',
+        },
+        {
+          title: 'Teruskan onboarding jika berkenaan',
+          body: 'Kelayakan dan kelulusan tertakluk kepada semakan serta keperluan pihak berkaitan.',
+        },
+      ],
+    },
+    suitableFor: {
+      title: 'Sesuai untuk bisnes seperti…',
+      bullets: [
+        'Bisnes yang mahu menawarkan pelanggan pilihan bayaran tambahan',
+        'Bisnes yang menguruskan pembelian di mana fleksibiliti bayaran mungkin membantu',
+        'Merchant yang bersedia melalui proses semakan dan onboarding',
+        'Bisnes yang ingin mencuba pilihan bayaran tambahan secara lebih tersusun',
+      ],
+    },
+    prepare: {
+      title: 'Apa yang perlu disediakan sebelum enquiry',
+      intro: 'Untuk memudahkan semakan awal, sediakan maklumat berikut:',
+      bullets: ['Nama bisnes', 'Jenis bisnes', 'Lokasi / kawasan', 'Laman web atau halaman media sosial, jika ada'],
+      primaryCta: 'Semak kelayakan',
+      secondaryText: 'WhatsApp untuk semakan awal',
+    },
+    faq: {
+      title: 'Soalan Lazim',
+      items: [
+        {
+          question: 'Adakah Novalink sebahagian daripada Atome?',
+          answer:
+            'Tidak. Novalink menyokong koordinasi enquiry merchant dan panduan onboarding. Novalink bukan sebahagian daripada pasukan dalaman Atome.',
+        },
+        {
+          question: 'Adakah semua bisnes layak?',
+          answer: 'Tidak semestinya. Kesesuaian bergantung pada semakan dan keperluan pihak berkaitan.',
+        },
+        {
+          question: 'Adakah enquiry ini menjamin kelulusan?',
+          answer: 'Tidak. Enquiry awal tidak menjamin kelulusan. Kelayakan dan kelulusan tertakluk kepada semakan.',
+        },
+        {
+          question: 'Apa maklumat yang diperlukan untuk mula?',
+          answer:
+            'Biasanya maklumat asas seperti nama bisnes, jenis bisnes, lokasi, dan saluran bisnes anda.',
+        },
+        {
+          question: 'Berapa lama untuk proses bermula?',
+          answer:
+            'Ia bergantung kepada maklumat yang diberikan dan langkah semakan seterusnya. WhatsApp kami untuk semakan awal.',
+        },
+        {
+          question: 'Adakah terdapat sebarang bayaran untuk buat enquiry?',
+          answer: 'Tiada bayaran untuk enquiry awal.',
+        },
+        {
+          question: 'Bolehkah saya buat enquiry jika belum ada laman web?',
+          answer:
+            'Boleh. Jika anda ada Facebook, Instagram, TikTok, atau saluran bisnes lain, anda masih boleh buat enquiry awal.',
+        },
+      ],
+    },
+    note: {
+      title: 'Nota penting',
+      body: 'Novalink menyokong koordinasi enquiry merchant dan panduan onboarding. Novalink bukan sebahagian daripada pasukan dalaman Atome. Kelayakan dan kelulusan tertakluk kepada semakan serta keperluan pihak berkaitan.',
+      linkLabel: 'Ketahui lebih lanjut di laman rasmi Atome Malaysia',
+      linkHref: 'https://www.atome.my/en-my/business',
+    },
+    finalCta: {
+      title: 'Bersedia untuk semak langkah seterusnya?',
+      body: 'WhatsApp kami dengan nama bisnes, jenis bisnes, dan lokasi anda untuk semakan awal.',
+      primaryCta: 'Semak kelayakan',
+      secondaryCta: 'WhatsApp untuk maklumat lanjut',
+    },
+  },
+  en: {
+    metaTitle: 'Atome Merchant Enquiry',
+    metaDescription:
+      'Atome merchant enquiry page for first-step guidance, an initial check, and onboarding support by Novalink.',
+    hero: {
+      headline: 'Want to offer Atome to your customers?',
+      subheadline:
+        'Find out how to bring Atome to your business — and let us help you get there.',
+      supportLine:
+        'We support merchants through the full process — from enquiry to onboarding.',
+      primaryCta: 'Check eligibility',
+      secondaryText: 'WhatsApp for more information',
+    },
+    why: {
+      title: 'Why merchants may consider Atome',
+      cards: [
+        {
+          title: 'Offer customers another payment option',
+          body: 'Give customers an additional way to pay at checkout, depending on merchant and transaction suitability.',
+        },
+        {
+          title: 'Support higher-consideration purchases',
+          body: 'A more flexible payment option may help customers feel more comfortable proceeding with a purchase.',
+        },
+        {
+          title: 'Get clearer guidance on next steps',
+          body: 'Merchants can receive more structured guidance on the enquiry process and what to prepare next.',
+        },
+        {
+          title: 'Suitable for businesses exploring additional payment convenience',
+          body: 'An option for businesses that want to offer customers added payment flexibility.',
+        },
+      ],
+    },
+    howItWorks: {
+      title: 'How it works',
+      steps: [
+        {
+          title: 'Send an enquiry',
+          body: 'Contact us on WhatsApp for an initial check.',
+        },
+        {
+          title: 'Share basic business information',
+          body: 'We will ask for basic details such as your business type, location, and business channels.',
+        },
+        {
+          title: 'Receive guidance on the next steps',
+          body: 'If suitable, you will receive guidance on what to prepare and what comes next.',
+        },
+        {
+          title: 'Proceed with onboarding where applicable',
+          body: 'Eligibility and approval remain subject to review and relevant requirements.',
+        },
+      ],
+    },
+    suitableFor: {
+      title: 'Suitable for businesses like…',
+      bullets: [
+        'Businesses that want to offer customers another payment option',
+        'Businesses handling purchases where payment flexibility may help',
+        'Merchants willing to go through review and onboarding steps',
+        'Businesses exploring additional payment options in a more structured way',
+      ],
+    },
+    prepare: {
+      title: 'What to prepare before enquiry',
+      intro: 'To make the initial review easier, prepare the following:',
+      bullets: ['Business name', 'Business type', 'Location / area', 'Website or social page, if available'],
+      primaryCta: 'Check eligibility',
+      secondaryText: 'WhatsApp for an initial check',
+    },
+    faq: {
+      title: 'FAQ',
+      items: [
+        {
+          question: 'Is Novalink part of Atome?',
+          answer:
+            'No. Novalink supports merchant enquiry coordination and onboarding guidance. Novalink is not part of Atome’s internal team.',
+        },
+        {
+          question: 'Is every business eligible?',
+          answer: 'Not necessarily. Suitability depends on review and relevant requirements.',
+        },
+        {
+          question: 'Does this enquiry guarantee approval?',
+          answer: 'No. An initial enquiry does not guarantee approval. Eligibility and approval remain subject to review.',
+        },
+        {
+          question: 'What information is needed to get started?',
+          answer:
+            'Usually basic information such as your business name, business type, location, and business channels.',
+        },
+        {
+          question: 'How soon can the process begin?',
+          answer:
+            'That depends on the information provided and the next review steps. Contact us on WhatsApp for an initial check.',
+        },
+        {
+          question: 'Is there any fee to make an enquiry?',
+          answer: 'There is no fee for an initial enquiry.',
+        },
+        {
+          question: 'Can I enquire if I do not have a website yet?',
+          answer:
+            'Yes. If you have Facebook, Instagram, TikTok, or other business channels, you may still make an initial enquiry.',
+        },
+      ],
+    },
+    note: {
+      title: 'Important note',
+      body: 'Novalink supports merchant enquiry coordination and onboarding guidance. Novalink is not part of Atome’s internal team. Eligibility and approval remain subject to review and relevant requirements.',
+      linkLabel: 'Learn more on the official Atome Malaysia website',
+      linkHref: 'https://www.atome.my/en-my/business',
+    },
+    finalCta: {
+      title: 'Ready to check the next step?',
+      body: 'WhatsApp us with your business name, business type, and location for an initial check.',
+      primaryCta: 'Check eligibility',
+      secondaryCta: 'WhatsApp for more information',
+    },
+  },
+} as const;
+
+const t = content[language];
+const pageLang = language === 'bm' ? 'ms' : 'en';
+---
+
+<MainLayout title={t.metaTitle} description={t.metaDescription} lang={pageLang}>
+  <section class="container-shell pt-10 sm:pt-14">
+    <div class="panel overflow-hidden">
+      <div class="grid gap-8 px-6 py-8 sm:px-10 sm:py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <div>
+          <div class="flex items-center justify-between gap-3">
+            <div class="inline-flex rounded-full border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Language toggle">
+              <a
+                href="/atome"
+                aria-current={language === 'bm' ? 'page' : undefined}
+                class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+                  language === 'bm' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
+                }`}
+              >
+                BM
+              </a>
+              <a
+                href="/atome/en"
+                aria-current={language === 'en' ? 'page' : undefined}
+                class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+                  language === 'en' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
+                }`}
+              >
+                EN
+              </a>
+            </div>
+          </div>
+
+          <h1 class="mt-5 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">{t.hero.headline}</h1>
+          <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-700">{t.hero.subheadline}</p>
+          <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">{t.hero.supportLine}</p>
+
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+              {t.hero.primaryCta}
+            </a>
+            <p class="text-sm text-slate-600">{t.hero.secondaryText}</p>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-slate-200 bg-slate-100 p-2 shadow-[0_20px_40px_-24px_rgba(15,23,42,0.45)]">
+          <img
+            src="/atome-hero-retail.jpeg"
+            alt="Local retail service scene"
+            class="h-full w-full rounded-2xl object-cover"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.why.title}</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      {t.why.cards.map((card) => (
+        <article class="panel p-5 sm:p-6">
+          <h3 class="text-lg font-semibold text-slate-900">{card.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">{card.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.howItWorks.title}</h2>
+    <div class="mt-6 grid gap-4 md:grid-cols-2">
+      {t.howItWorks.steps.map((step, index) => (
+        <article class="panel p-5 sm:p-6">
+          <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-100 text-sm font-semibold text-brand-800">
+            {index + 1}
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">{step.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">{step.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.suitableFor.title}</h2>
+      <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-700">
+        {t.suitableFor.bullets.map((bullet) => (
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.prepare.title}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">{t.prepare.intro}</p>
+      <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
+        {t.prepare.bullets.map((bullet) => (
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+          {t.prepare.primaryCta}
+        </a>
+        <p class="text-sm text-slate-600">{t.prepare.secondaryText}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12" id="faq">
+    <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.faq.title}</h2>
+    <div class="mt-6 space-y-3">
+      {t.faq.items.map((item) => (
+        <details class="panel group px-5 py-4">
+          <summary class="cursor-pointer list-none text-sm font-semibold text-slate-900 marker:content-none">
+            <span class="inline-flex w-full items-start justify-between gap-4">
+              <span>{item.question}</span>
+              <span class="mt-0.5 text-brand-700 transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="pt-3 text-sm leading-relaxed text-slate-600">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel border-slate-300 bg-slate-100 p-6 sm:p-8">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.note.title}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">{t.note.body}</p>
+      <a
+        href={t.note.linkHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-flex text-sm font-semibold text-brand-700 transition hover:text-brand-800"
+      >
+        {t.note.linkLabel}
+      </a>
+    </div>
+  </section>
+
+  <section class="container-shell pt-12">
+    <div class="panel p-6 sm:p-10">
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.finalCta.title}</h2>
+      <p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">{t.finalCta.body}</p>
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+          {t.finalCta.primaryCta}
+        </a>
+        <p class="text-sm text-slate-600">{t.finalCta.secondaryCta}</p>
+      </div>
+    </div>
+  </section>
+</MainLayout>
