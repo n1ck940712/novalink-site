@@ -510,7 +510,13 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
           <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">{t.hero.supportLine}</p>
 
           <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+            <a
+              href={whatsappLink}
+              onclick="return gtag_report_conversion(this.href);"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary text-center"
+            >
               {t.hero.primaryCta}
             </a>
             <p class="text-sm text-slate-600">{t.hero.secondaryText}</p>
@@ -608,7 +614,13 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
       </ul>
 
       <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+        <a
+          href={whatsappLink}
+          onclick="return gtag_report_conversion(this.href);"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary text-center"
+        >
           {t.prepare.primaryCta}
         </a>
         <p class="text-sm text-slate-600">{t.prepare.secondaryText}</p>
@@ -687,7 +699,13 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
       <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.finalCta.title}</h2>
       <p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">{t.finalCta.body}</p>
       <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+        <a
+          href={whatsappLink}
+          onclick="return gtag_report_conversion(this.href);"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary text-center"
+        >
           {t.finalCta.primaryCta}
         </a>
         <p class="text-sm text-slate-600">{t.finalCta.secondaryCta}</p>
