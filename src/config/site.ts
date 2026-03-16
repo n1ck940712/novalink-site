@@ -10,7 +10,7 @@ export const siteConfig = {
     'Novalink helps SMEs improve conversion, operations, and execution through websites, automation, and practical digital systems.',
   siteUrl: 'https://novalink-technologies.com',
   locale: 'en_US',
-  email: 'sales.novalink@gmail.com',
+  email: 'hello@novalink-technologies.com',
   phoneDisplay: '+6 012 808 1725',
   phoneE164: '60128081725',
   city: 'Kuala Lumpur, Malaysia',
