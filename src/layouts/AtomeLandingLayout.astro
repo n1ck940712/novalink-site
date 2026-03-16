@@ -58,6 +58,17 @@ const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).toString();
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18020101322"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18020101322');
+    </script>
+
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
   </head>
   <body>
