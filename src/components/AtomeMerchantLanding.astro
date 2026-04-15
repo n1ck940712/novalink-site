@@ -535,7 +535,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     </div>
   </section>
 
-  <section class="container-shell campaign-section campaign-section-compact">
+  <section id="what-is-atome" class="container-shell campaign-anchor-target campaign-section campaign-section-compact">
     <div class="campaign-explainer rounded-3xl border border-slate-200/80 bg-white/70 px-6 py-6 sm:px-8">
       <div class="max-w-3xl">
         <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.explainer.title}</h2>
@@ -559,7 +559,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     </div>
   </section>
 
-  <section class="container-shell campaign-section">
+  <section id="why-merchants" class="container-shell campaign-anchor-target campaign-section">
     <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.why.title}</h2>
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
       {t.why.cards.map((card) => (
@@ -571,7 +571,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     </div>
   </section>
 
-  <section class="container-shell campaign-section">
+  <section id="how-it-works" class="container-shell campaign-anchor-target campaign-section">
     <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.howItWorks.title}</h2>
     <div class="mt-6 grid gap-4 md:grid-cols-2">
       {t.howItWorks.steps.map((step, index) => (
@@ -586,7 +586,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     </div>
   </section>
 
-  <section class="container-shell campaign-section">
+  <section id="suitable-for" class="container-shell campaign-anchor-target campaign-section">
     <div class="panel p-6 sm:p-8">
       <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.suitableFor.title}</h2>
       <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-700">
@@ -600,7 +600,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     </div>
   </section>
 
-  <section class="container-shell campaign-section campaign-section-tight">
+  <section id="prepare-before-enquiry" class="container-shell campaign-anchor-target campaign-section campaign-section-tight">
     <div class="panel campaign-compact-panel">
       <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.prepare.title}</h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-700">{t.prepare.intro}</p>
@@ -628,7 +628,7 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     </div>
   </section>
 
-  <section class="container-shell campaign-section campaign-section-separated" id="faq">
+  <section id="faq" class="container-shell campaign-anchor-target campaign-section campaign-section-separated">
     <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.faq.title}</h2>
     <div class="mt-6 space-y-3">
       {t.faq.mainItems.map((item) => (
@@ -741,5 +741,9 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
 
   .campaign-explainer {
     box-shadow: 0 10px 24px -22px rgba(15, 23, 42, 0.45);
+  }
+
+  .campaign-anchor-target {
+    scroll-margin-top: 6.5rem;
   }
 </style>
