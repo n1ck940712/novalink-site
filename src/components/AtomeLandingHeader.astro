@@ -52,7 +52,7 @@ const homeLabel = language === 'bm' ? 'Laman utama Novalink' : 'Novalink home';
 
         <a
           href={primaryCtaHref}
-          onclick="return gtag_report_conversion(this.href);"
+          onclick="gtag_report_conversion();"
           class="btn-primary px-4 py-2.5 text-sm"
           target={isExternalCta ? '_blank' : undefined}
           rel={isExternalCta ? 'noopener noreferrer' : undefined}
