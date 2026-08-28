@@ -5,91 +5,94 @@ import { siteConfig } from '../config/site';
 const whatsappLink = `https://wa.me/${siteConfig.phoneE164}`;
 interface Props {
   language?: 'bm' | 'en';
+  variant?: 'offer' | 'register';
 }
 
-const { language = 'bm' } = Astro.props;
+const { language = 'bm', variant = 'offer' } = Astro.props;
+const basePath = variant === 'register' ? '/atome-1' : '/atome';
 
 const content = {
   bm: {
     metaTitle: 'Atome Merchant Enquiry',
     metaDescription:
-      'Halaman enquiry merchant Atome untuk panduan langkah pertama, semakan awal, dan sokongan onboarding oleh Novalink.',
+      'Halaman enquiry merchant Atome. Novalink bantu anda faham langkah pertama, buat semakan awal, dan uruskan proses onboarding.',
     hero: {
-      headline: 'Ingin tawarkan Atome kepada pelanggan anda?',
+      headline: 'Nak tawarkan Atome kepada pelanggan anda?',
       subheadline:
-        'Bantu bisnes anda tambah pilihan bayaran di checkout dengan panduan enquiry dan onboarding yang lebih jelas.',
+        'Tambah satu lagi pilihan bayaran di checkout anda. Kami bantu dari enquiry sampai onboarding.',
       supportLine:
-        'Atome ialah pilihan Buy Now Pay Later (BNPL) / bayaran ansuran yang memberi pelanggan lebih fleksibiliti semasa pembelian.',
+        'Atome ialah pilihan Buy Now Pay Later (BNPL) yang benarkan pelanggan beli sekarang dan bayar secara ansuran.',
+      trustLine: 'Tiada setup fee · Tiada monthly fee',
       primaryCta: 'Buat enquiry merchant',
       secondaryText: 'WhatsApp untuk maklumat lanjut',
     },
     explainer: {
       title: 'Apa itu Atome Buy Now Pay Later?',
       bullets: [
-        'Pelanggan boleh membuat pembelian sekarang dan membayar secara ansuran',
-        'Atome Malaysia menerangkan pilihan 3 ansuran tanpa faedah',
-        'Bagi sesetengah transaksi, pilihan tempoh lebih panjang mungkin tersedia dengan caj yang dipaparkan dalam aplikasi',
-        'Bayaran pertama dibuat semasa pembelian, dan bayaran seterusnya dijadualkan dalam aplikasi',
-        'Untuk merchant, ini menambah satu lagi pilihan bayaran semasa checkout',
+        'Pelanggan beli sekarang, bayar secara ansuran',
+        'Atome Malaysia tawarkan pilihan 3 kali bayaran tanpa faedah',
+        'Untuk sesetengah transaksi, ada pilihan tempoh lebih panjang dengan caj yang dipaparkan dalam app',
+        'Bayaran pertama dibuat semasa pembelian, baki bayaran dijadualkan dalam app',
+        'Untuk merchant, ini satu lagi pilihan bayaran di checkout anda',
       ],
       linkLabel: 'Rujuk laman rasmi Atome Malaysia',
       linkHref: 'https://www.atome.my/how-it-works',
     },
     why: {
-      title: 'Kenapa merchant pertimbangkan Atome',
+      title: 'Kenapa merchant pilih Atome',
       cards: [
         {
-          title: 'Tawarkan pelanggan pilihan bayaran tambahan',
-          body: 'Beri pelanggan satu lagi cara untuk membayar semasa checkout, bergantung pada kesesuaian merchant dan transaksi.',
+          title: 'Beri pelanggan lebih pilihan bayaran',
+          body: 'Satu lagi cara untuk pelanggan bayar di checkout, bergantung pada kesesuaian bisnes dan transaksi.',
         },
         {
-          title: 'Bantu pelanggan buat keputusan untuk pembelian yang lebih besar',
-          body: 'Pilihan bayaran yang lebih fleksibel boleh membantu pelanggan berasa lebih selesa untuk meneruskan pembelian.',
+          title: 'Bantu pelanggan buat keputusan',
+          body: 'Bila bayaran boleh dipecahkan kepada ansuran, pelanggan biasanya lebih selesa untuk teruskan pembelian yang lebih besar.',
         },
         {
-          title: 'Dapatkan panduan yang lebih jelas untuk langkah seterusnya',
-          body: 'Merchant boleh menerima panduan yang lebih tersusun tentang proses enquiry dan apa yang perlu disediakan seterusnya.',
+          title: 'Tiada setup fee, tiada monthly fee',
+          body: 'Merchant hanya dikenakan caj MDR bagi setiap transaksi. Terma penuh akan dijelaskan semasa onboarding.',
         },
         {
-          title: 'Sesuai untuk bisnes yang ingin tambah pilihan bayaran',
-          body: 'Pilihan tambahan untuk bisnes yang ingin memberikan pelanggan lebih fleksibiliti semasa pembayaran.',
+          title: 'Panduan jelas untuk setiap langkah',
+          body: 'Kami terangkan apa yang perlu disediakan, apa yang Atome akan semak, dan apa yang berlaku selepas itu.',
         },
       ],
     },
     howItWorks: {
-      title: 'Cara ia berfungsi',
+      title: 'Macam mana prosesnya',
       steps: [
         {
           title: 'Hantar enquiry',
-          body: 'Hubungi kami melalui WhatsApp untuk semakan awal.',
+          body: 'WhatsApp kami untuk semakan awal. Cukup dengan maklumat asas bisnes anda.',
         },
         {
-          title: 'Kongsi maklumat asas bisnes',
-          body: 'Kami akan meminta butiran asas seperti jenis bisnes, lokasi, dan saluran bisnes anda.',
+          title: 'Kongsi maklumat bisnes',
+          body: 'Kami tanya perkara asas: jenis bisnes, lokasi, dan saluran jualan anda.',
         },
         {
-          title: 'Terima panduan langkah seterusnya',
-          body: 'Jika bisnes anda sesuai, anda akan menerima panduan tentang apa yang perlu disediakan dan apa yang akan berlaku seterusnya.',
+          title: 'Dapat panduan langkah seterusnya',
+          body: 'Kalau bisnes anda sesuai, kami beritahu apa yang perlu disediakan dan apa yang akan berlaku selepas itu.',
         },
         {
-          title: 'Teruskan onboarding jika berkenaan',
-          body: 'Kelayakan dan kelulusan tertakluk kepada semakan serta keperluan pihak berkaitan.',
+          title: 'Teruskan onboarding',
+          body: 'Kami bantu sampai proses onboarding selesai. Kelulusan akhir tetap bergantung pada semakan Atome.',
         },
       ],
     },
     suitableFor: {
-      title: 'Sesuai untuk bisnes seperti…',
+      title: 'Sesuai untuk bisnes macam ini…',
       bullets: [
-        'Bisnes yang ingin menawarkan pelanggan pilihan bayaran tambahan',
-        'Bisnes yang menguruskan pembelian di mana fleksibiliti bayaran mungkin membantu',
-        'Merchant yang bersedia melalui proses semakan dan onboarding',
-        'Bisnes yang mahu menambah pilihan bayaran secara lebih tersusun',
+        'Kedai yang nak beri pelanggan lebih pilihan bayaran',
+        'Bisnes dengan harga barang agak tinggi, di mana ansuran boleh bantu pelanggan buat keputusan',
+        'Merchant yang sedia lalui proses semakan dan onboarding',
+        'Bisnes online atau offline yang nak tambah pilihan bayaran secara tersusun',
       ],
     },
     prepare: {
       title: 'Apa yang perlu disediakan sebelum enquiry',
-      intro: 'Untuk memudahkan semakan awal, sediakan maklumat berikut:',
-      bullets: ['Nama bisnes', 'Jenis bisnes', 'Lokasi / kawasan', 'Laman web atau halaman media sosial, jika ada'],
+      intro: 'Untuk cepatkan semakan awal, sediakan maklumat ini:',
+      bullets: ['Nama bisnes', 'Jenis bisnes', 'Lokasi / kawasan', 'Laman web atau page media sosial, kalau ada'],
       primaryCta: 'Buat enquiry merchant',
       secondaryText: 'WhatsApp untuk semakan awal',
     },
@@ -99,82 +102,82 @@ const content = {
         {
           question: 'Adakah Novalink sebahagian daripada Atome?',
           answer:
-            'Tidak. Novalink membantu dari segi koordinasi enquiry merchant dan panduan onboarding. Novalink bukan sebahagian daripada pasukan dalaman Atome.',
+            'Bukan. Novalink bantu uruskan enquiry merchant dan panduan onboarding. Kami bukan pasukan dalaman Atome.',
         },
         {
-          question: 'Adakah semua bisnes layak?',
-          answer: 'Tidak semestinya. Kesesuaian bergantung kepada semakan dan keperluan pihak berkaitan.',
+          question: 'Semua bisnes layak ke?',
+          answer: 'Tak semestinya. Kesesuaian bergantung pada semakan dan keperluan Atome.',
         },
         {
-          question: 'Adakah enquiry ini menjamin kelulusan?',
-          answer: 'Tidak. Enquiry awal tidak menjamin kelulusan. Kelayakan dan kelulusan tertakluk kepada semakan.',
+          question: 'Enquiry ini jamin kelulusan?',
+          answer: 'Tidak. Enquiry awal tak jamin kelulusan. Keputusan akhir di pihak Atome selepas semakan.',
         },
         {
-          question: 'Maklumat apa yang diperlukan untuk bermula?',
+          question: 'Apa maklumat yang diperlukan untuk mula?',
           answer:
-            'Biasanya maklumat asas seperti nama bisnes, jenis bisnes, lokasi, dan saluran bisnes anda.',
+            'Maklumat asas sahaja: nama bisnes, jenis bisnes, lokasi, dan saluran jualan anda.',
         },
         {
-          question: 'Adakah saya perlu bayar apa-apa untuk buat enquiry?',
-          answer: 'Tidak ada bayaran untuk semakan awal melalui enquiry.',
+          question: 'Ada kena bayar apa-apa untuk buat enquiry?',
+          answer: 'Tiada. Semakan awal melalui enquiry adalah percuma.',
         },
         {
-          question: 'Adakah saya perlukan hardware khas atau integration?',
+          question: 'Saya perlu hardware khas atau integration?',
           answer:
-            'Tidak semestinya. Untuk kedai fizikal, Atome menggunakan aliran pembayaran berasaskan QR. Untuk kedai online, integration bergantung kepada platform dan saluran jualan anda.',
+            'Tak semestinya. Untuk kedai fizikal, Atome guna pembayaran secara QR. Untuk kedai online, integration bergantung pada platform dan saluran jualan anda.',
         },
         {
-          question: 'Bolehkah bisnes saya dipaparkan dalam app Atome?',
+          question: 'Boleh ke bisnes saya dipaparkan dalam app Atome?',
           answer:
-            'Ya. Atome mempunyai keupayaan untuk memaparkan merchant dalam app, tertakluk kepada proses dan keperluan mereka.',
+            'Boleh. Atome ada ruang untuk paparkan merchant dalam app, tertakluk pada proses dan keperluan mereka.',
         },
         {
-          question: 'Adakah setiap pelanggan akan mendapat limit yang sama?',
+          question: 'Semua pelanggan dapat limit yang sama?',
           answer:
-            'Tidak. Kelayakan dan limit pelanggan boleh berbeza mengikut profil pengguna, jenis pembayaran, dan penilaian Atome.',
+            'Tidak. Kelayakan dan limit berbeza ikut profil pengguna, jenis pembayaran, dan penilaian Atome.',
         },
         {
-          question: 'Bagaimana yuran merchant ditentukan?',
+          question: 'Macam mana yuran merchant dikira?',
           answer:
-            'Tiada setup fee. Struktur merchant adalah berdasarkan MDR per transaksi, dan terma komersial akan dijelaskan semasa proses onboarding.',
+            'Tiada setup fee dan tiada monthly fee. Merchant hanya dikenakan MDR bagi setiap transaksi, dan terma komersial akan dijelaskan semasa onboarding.',
         },
       ],
       supportLine:
-        'Perlu bantuan tentang yuran, onboarding, kesesuaian bisnes, atau kedai online? WhatsApp kami untuk semakan awal.',
+        'Ada soalan tentang yuran, onboarding, kesesuaian bisnes, atau kedai online? WhatsApp kami untuk semakan awal.',
       moreTitle: 'Lebih banyak soalan merchant',
       moreGroups: [
         {
           title: 'Yuran & terma komersial',
           items: [
             {
-              question: 'Apa yang membezakan Atome dengan pilihan pay-later lain?',
+              question: 'Apa beza Atome dengan pilihan pay-later lain?',
               answer:
-                'Atome bukan sekadar satu lagi pilihan bayaran di checkout. Merchant juga berpeluang dipaparkan dalam app Atome, disokong dengan kempen atau voucher tertentu, dan lebih mudah diakses oleh pengguna debit card yang mungkin tidak menggunakan credit card.',
+                'Atome bukan sekadar satu lagi pilihan bayaran di checkout. Merchant juga berpeluang dipaparkan dalam app Atome, disokong dengan kempen atau voucher tertentu, dan lebih mudah dicapai oleh pengguna debit card yang tak guna credit card.',
             },
             {
-              question: 'Bagaimana jika pelanggan tidak bayar semula kepada Atome?',
+              question: 'Macam mana kalau pelanggan tak bayar balik kepada Atome?',
               answer:
-                'Pengurusan bayaran balik pelanggan adalah di bawah proses Atome. Merchant akan dijelaskan tentang aliran settlement dan terma berkaitan semasa onboarding.',
+                'Bayaran balik pelanggan diuruskan sepenuhnya oleh Atome. Aliran settlement dan terma berkaitan akan dijelaskan kepada merchant semasa onboarding.',
             },
             {
-              question: 'Berapa ramai orang menggunakan Atome?',
+              question: 'Ramai ke orang guna Atome?',
               answer:
-                'Atome mempunyai pangkalan pengguna yang besar di Malaysia dan rantau ini. Selain fungsi checkout, merchant juga berpeluang mendapat visibility dalam app Atome.',
+                'Atome ada pangkalan pengguna yang besar di Malaysia dan rantau ini. Selain checkout, merchant juga berpeluang dapat visibility dalam app Atome.',
             },
             {
               question: 'Berapa yuran Atome?',
               answer:
-                'Untuk merchant yang kami uruskan, struktur yang biasa kami jelaskan ialah 6% + RM1 bagi setiap transaksi. Tiada setup fee dan tiada monthly fee. Pengesahan akhir masih tertakluk kepada terma onboarding semasa.',
+                'Untuk merchant yang kami uruskan, struktur biasa ialah 6% + RM1 bagi setiap transaksi. Tiada setup fee, tiada monthly fee. Pengesahan akhir tertakluk pada terma onboarding semasa.',
             },
             {
-              question: 'Bolehkah merchant dapat kadar lebih rendah daripada 6%?',
+              question: 'Boleh ke dapat kadar lebih rendah daripada 6%?',
               answer:
-                'Ya, dalam sesetengah keadaan. Merchant dengan GMV tinggi, banyak cawangan, atau profil jenama yang kuat mungkin boleh dirundingkan kadar yang lebih baik dengan Atome.',
+                'Boleh, dalam sesetengah keadaan. Merchant dengan GMV tinggi, banyak cawangan, atau jenama yang kuat berkemungkinan boleh runding kadar yang lebih baik dengan Atome.',
             },
             {
-              question: 'Adakah setiap pelanggan mempunyai credit limit yang sama?',
+              question: 'Semua pelanggan ada credit limit yang sama?',
               answer:
-                'Tidak. Limit pelanggan berbeza mengikut profil pengguna, jenis pembayaran, dan aktiviti pembayaran mereka. Jangan nyatakan jumlah tetap pada halaman ini.',
+                'Tidak. Limit berbeza ikut profil pengguna, jenis pembayaran, dan rekod pembayaran mereka.',
             },
           ],
         },
@@ -182,23 +185,23 @@ const content = {
           title: 'Setup & onboarding',
           items: [
             {
-              question: 'Adakah onboarding susah?',
+              question: 'Onboarding ni susah tak?',
               answer:
-                'Tidak rumit jika maklumat asas dan dokumen disediakan dengan betul. Kami bantu merchant faham langkah awal dan proses seterusnya.',
+                'Tak susah kalau maklumat asas dan dokumen disediakan awal. Kami bantu anda faham setiap langkah dari mula sampai selesai.',
             },
             {
-              question: 'Adakah saya perlu signboard yang proper?',
+              question: 'Saya perlu signboard yang proper?',
               answer:
-                'Ya. Atome biasanya memerlukan signboard kedai yang proper, bukan sekadar banner. Jika merchant nampak established tetapi belum memenuhi syarat ini, kami boleh bantu semak dahulu.',
+                'Ya. Atome biasanya perlukan signboard kedai yang proper, bukan sekadar banner. Kalau kedai anda nampak established tapi belum cukup syarat ini, kami boleh semak dulu.',
             },
             {
-              question: 'Adakah saya perlu cashier counter?',
-              answer: 'Ya. Atome biasanya memerlukan setup cashier counter untuk kedai fizikal.',
+              question: 'Saya perlu cashier counter?',
+              answer: 'Ya. Untuk kedai fizikal, Atome biasanya perlukan setup cashier counter.',
             },
             {
-              question: 'Berapa lama assessment biasanya ambil masa?',
+              question: 'Berapa lama proses assessment?',
               answer:
-                'Biasanya sehingga 2 minggu sebelum kontrak sedia untuk ditandatangani, bergantung kepada dokumen dan proses semakan.',
+                'Biasanya sehingga 2 minggu sebelum kontrak sedia untuk ditandatangani, bergantung pada dokumen dan proses semakan.',
             },
           ],
         },
@@ -206,44 +209,43 @@ const content = {
           title: 'Kesesuaian bisnes',
           items: [
             {
-              question: 'Kenapa bukan biar pelanggan guna installment credit card sahaja?',
+              question: 'Kenapa tak biar pelanggan guna installment credit card je?',
               answer:
-                'Ramai pelanggan tidak mempunyai credit card, terutamanya golongan yang lebih muda. Atome memberi satu lagi pilihan bayaran ansuran melalui app, jadi bisnes anda tidak hanya bergantung kepada pengguna credit card.',
+                'Ramai pelanggan tak ada credit card, terutamanya golongan muda. Atome bagi mereka pilihan ansuran melalui app, jadi jualan anda tak bergantung pada pengguna credit card sahaja.',
             },
             {
               question: 'Boleh mohon kalau bisnes saya di luar Malaysia?',
-              answer: 'Tidak. Atome Malaysia hanya menerima bisnes yang berdaftar di Malaysia.',
+              answer: 'Tak boleh. Atome Malaysia hanya terima bisnes yang berdaftar di Malaysia.',
             },
             {
-              question: 'Bagaimana jika saya menjalankan kedai online?',
+              question: 'Macam mana kalau saya jalankan kedai online?',
               answer:
-                'Boleh, tetapi laman anda perlu mempunyai checkout page yang proper. Dalam sesetengah kes, Atome mungkin meminta screenshot atau live demo semasa assessment.',
+                'Boleh, tapi laman anda perlu ada checkout page yang proper. Dalam sesetengah kes, Atome mungkin minta screenshot atau live demo semasa assessment.',
             },
             {
-              question: 'Adakah Atome akan minta product list?',
+              question: 'Atome akan minta product list?',
               answer:
-                'Kadang-kadang ya, terutamanya semasa assessment. Merchant sepatutnya bersedia untuk menyediakan SKU atau product list jika diminta.',
+                'Kadang-kadang, terutamanya semasa assessment. Elok sediakan SKU atau product list lebih awal.',
             },
             {
-              question: 'Bagaimana jika bisnes saya dalam kategori berisiko tinggi?',
+              question: 'Macam mana kalau bisnes saya dalam kategori berisiko tinggi?',
               answer:
-                'Ia mungkin memerlukan semakan yang lebih teliti. Atome mungkin meminta dokumen tambahan atau kelulusan tambahan bergantung kepada kategori bisnes.',
+                'Semakan mungkin ambil masa lebih lama. Atome mungkin minta dokumen atau kelulusan tambahan bergantung pada kategori bisnes.',
             },
           ],
         },
       ],
-      supportNote:
-        'Untuk maklumat lanjut, rujuk deck Atome dalam folder getting started atau WhatsApp kami untuk semakan awal.',
+      supportNote: 'Ada soalan lain? WhatsApp kami dan kami terangkan dengan lebih lanjut.',
     },
     note: {
       title: 'Nota penting',
-      body: 'Novalink menyokong koordinasi enquiry merchant dan panduan onboarding. Novalink bukan sebahagian daripada pasukan dalaman Atome. Kelayakan dan kelulusan tertakluk kepada semakan serta keperluan pihak berkaitan.',
+      body: 'Novalink bantu uruskan enquiry merchant dan panduan onboarding. Kami bukan pasukan dalaman Atome. Kelayakan dan kelulusan akhir bergantung pada semakan dan keperluan Atome.',
       linkLabel: 'Ketahui lebih lanjut di laman rasmi Atome Malaysia',
       linkHref: 'https://www.atome.my/en-my/business',
     },
     finalCta: {
-      title: 'Bersedia untuk semak langkah seterusnya?',
-      body: 'WhatsApp kami dengan nama bisnes, jenis bisnes, dan lokasi anda untuk semakan awal.',
+      title: 'Sedia untuk mula?',
+      body: 'WhatsApp kami dengan nama bisnes, jenis bisnes, dan lokasi anda. Kami buat semakan awal dan terangkan langkah seterusnya.',
       primaryCta: 'Buat enquiry merchant',
       secondaryCta: 'WhatsApp untuk maklumat lanjut',
     },
@@ -258,6 +260,7 @@ const content = {
         'Help your business add another payment option at checkout with clearer enquiry and onboarding guidance.',
       supportLine:
         'Atome is a Buy Now Pay Later (BNPL) / instalment payment option that gives customers more flexibility at the point of purchase.',
+      trustLine: 'No setup fee · No monthly fee',
       primaryCta: 'Start merchant enquiry',
       secondaryText: 'WhatsApp for more information',
     },
@@ -285,12 +288,12 @@ const content = {
           body: 'A more flexible payment option may help customers feel more comfortable proceeding with a purchase.',
         },
         {
-          title: 'Get clearer guidance on next steps',
-          body: 'Merchants can receive more structured guidance on the enquiry process and what to prepare next.',
+          title: 'No setup fee, no monthly fee',
+          body: 'Merchants are charged an MDR per transaction. Full terms are clarified during onboarding.',
         },
         {
-          title: 'Suitable for businesses exploring additional payment convenience',
-          body: 'An option for businesses that want to offer customers added payment flexibility.',
+          title: 'Clear guidance at every step',
+          body: 'We explain what to prepare, what Atome will review, and what happens after that.',
         },
       ],
     },
@@ -412,7 +415,7 @@ const content = {
             {
               question: 'Will every customer have the same credit limit?',
               answer:
-                'No. Customer limits vary depending on the user profile, payment type, and repayment activity. Do not state fixed amounts on this page.',
+                'No. Customer limits vary depending on the user profile, payment type, and repayment activity.',
             },
           ],
         },
@@ -470,8 +473,7 @@ const content = {
           ],
         },
       ],
-      supportNote:
-        'For more information, refer to the Atome deck in the getting started folder or WhatsApp us for an initial check.',
+      supportNote: 'Have another question? WhatsApp us and we will walk you through it.',
     },
     note: {
       title: 'Important note',
@@ -490,14 +492,49 @@ const content = {
 
 const t = content[language];
 const pageLang = language === 'bm' ? 'ms' : 'en';
+
+const registerCopy = {
+  bm: {
+    metaDescription:
+      'Halaman pendaftaran merchant Atome. Novalink bantu anda dari enquiry sampai onboarding, tanpa setup fee dan monthly fee.',
+    hero: {
+      headline: 'Nak daftar sebagai merchant Atome?',
+      subheadline:
+        'Kami bantu anda dari enquiry sampai onboarding, dan terangkan setiap langkah yang perlu disediakan.',
+    },
+    finalCta: {
+      title: 'Sedia untuk mula pendaftaran?',
+      body: 'WhatsApp kami dengan nama bisnes, jenis bisnes, dan lokasi anda untuk semakan awal.',
+    },
+  },
+  en: {
+    metaDescription:
+      'Atome merchant registration enquiry page for first-step guidance, an initial check, and onboarding support by Novalink.',
+    hero: {
+      headline: 'Looking to register as an Atome merchant?',
+      subheadline:
+        'We support you from enquiry through onboarding, and explain what to prepare at every step.',
+    },
+    finalCta: {
+      title: 'Ready to start your merchant registration?',
+      body: 'WhatsApp us with your business name, business type, and location for an initial check.',
+    },
+  },
+} as const;
+
+const hero = variant === 'register' ? { ...t.hero, ...registerCopy[language].hero } : t.hero;
+const finalCta = variant === 'register' ? { ...t.finalCta, ...registerCopy[language].finalCta } : t.finalCta;
+const metaDescription =
+  variant === 'register' ? registerCopy[language].metaDescription : t.metaDescription;
 ---
 
 <AtomeLandingLayout
   title={t.metaTitle}
-  description={t.metaDescription}
+  description={metaDescription}
   lang={pageLang}
   language={language}
-  primaryCtaLabel={t.hero.primaryCta}
+  basePath={basePath}
+  primaryCtaLabel={hero.primaryCta}
   primaryCtaHref={whatsappLink}
   noIndex={true}
 >
@@ -505,9 +542,9 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
     <div class="panel overflow-hidden">
       <div class="grid gap-8 px-6 py-8 sm:px-10 sm:py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div>
-          <h1 class="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">{t.hero.headline}</h1>
-          <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-700">{t.hero.subheadline}</p>
-          <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">{t.hero.supportLine}</p>
+          <h1 class="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">{hero.headline}</h1>
+          <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-700">{hero.subheadline}</p>
+          <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">{hero.supportLine}</p>
 
           <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
@@ -517,10 +554,15 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
               rel="noopener noreferrer"
               class="btn-primary text-center"
             >
-              {t.hero.primaryCta}
+              {hero.primaryCta}
             </a>
-            <p class="text-sm text-slate-600">{t.hero.secondaryText}</p>
+            <p class="text-sm text-slate-600">{hero.secondaryText}</p>
           </div>
+
+          <p class="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-semibold text-slate-700">
+            <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
+            {hero.trustLine}
+          </p>
         </div>
 
         <div class="rounded-3xl border border-slate-200 bg-slate-100 p-2 shadow-[0_20px_40px_-24px_rgba(15,23,42,0.45)]">
@@ -696,8 +738,8 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
 
   <section class="container-shell campaign-section campaign-section-tight">
     <div class="panel campaign-compact-panel">
-      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{t.finalCta.title}</h2>
-      <p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">{t.finalCta.body}</p>
+      <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">{finalCta.title}</h2>
+      <p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">{finalCta.body}</p>
       <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
         <a
           href={whatsappLink}
@@ -706,9 +748,9 @@ const pageLang = language === 'bm' ? 'ms' : 'en';
           rel="noopener noreferrer"
           class="btn-primary text-center"
         >
-          {t.finalCta.primaryCta}
-        </a>
-        <p class="text-sm text-slate-600">{t.finalCta.secondaryCta}</p>
+              {finalCta.primaryCta}
+            </a>
+            <p class="text-sm text-slate-600">{finalCta.secondaryCta}</p>
       </div>
     </div>
   </section>

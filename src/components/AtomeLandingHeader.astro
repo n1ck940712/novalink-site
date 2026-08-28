@@ -3,11 +3,12 @@ import { siteConfig } from '../config/site';
 
 interface Props {
   language?: 'bm' | 'en';
+  basePath?: string;
   primaryCtaLabel: string;
   primaryCtaHref: string;
 }
 
-const { language = 'bm', primaryCtaLabel, primaryCtaHref } = Astro.props;
+const { language = 'bm', basePath = '/atome', primaryCtaLabel, primaryCtaHref } = Astro.props;
 
 const hasLogoImage = Boolean(siteConfig.logoSrc);
 const isExternalCta = /^https?:\/\//.test(primaryCtaHref);
@@ -31,7 +32,7 @@ const homeLabel = language === 'bm' ? 'Laman utama Novalink' : 'Novalink home';
       <div class="ml-auto flex items-center gap-2 sm:gap-3">
         <div class="inline-flex rounded-full border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Language toggle">
           <a
-            href="/atome"
+            href={basePath}
             aria-current={language === 'bm' ? 'page' : undefined}
             class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
               language === 'bm' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
@@ -40,7 +41,7 @@ const homeLabel = language === 'bm' ? 'Laman utama Novalink' : 'Novalink home';
             BM
           </a>
           <a
-            href="/atome/en"
+            href={`${basePath}/en`}
             aria-current={language === 'en' ? 'page' : undefined}
             class={`rounded-full px-3 py-1 text-xs font-semibold transition ${
               language === 'en' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800'
