@@ -1,0 +1,56 @@
+---
+import LandingIcon from './LandingIcon.astro';
+import { siteConfig } from '../config/site';
+
+interface Props {
+  language?: 'bm' | 'en';
+  basePath: string;
+  primaryCtaLabel: string;
+  primaryCtaHref: string;
+}
+
+const { language = 'bm', basePath, primaryCtaLabel, primaryCtaHref } = Astro.props;
+
+const homeLabel = language === 'bm' ? 'Laman utama Novalink' : 'Novalink home';
+const languages = [
+  { code: 'bm', label: 'BM', href: basePath },
+  { code: 'en', label: 'EN', href: `${basePath}/en` },
+] as const;
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/90 backdrop-blur-md">
+  <div class="container-shell flex h-16 items-center justify-between gap-3">
+    <a href="/" aria-label={homeLabel} class="inline-flex shrink-0 items-center">
+      <img src={siteConfig.logoSrc} alt={siteConfig.logoAlt} width="404" height="107" class="h-7 w-auto sm:h-8" />
+    </a>
+
+    <div class="flex items-center gap-3">
+      <div class="inline-flex rounded-full bg-slate-100 p-1" role="group" aria-label="Language toggle">
+        {
+          languages.map((item) => (
+            <a
+              href={item.href}
+              aria-current={language === item.code ? 'page' : undefined}
+              class={`inline-flex h-10 min-w-11 items-center justify-center rounded-full px-3 text-sm font-semibold transition ${
+                language === item.code ? 'bg-white text-slate-950 shadow-sm' : 'text-slate-500 hover:text-slate-900'
+              }`}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <a
+        href={primaryCtaHref}
+        onclick="gtag_report_conversion();"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden h-11 items-center gap-2 rounded-full bg-brand-500 px-5 text-sm font-semibold text-slate-950 transition hover:bg-brand-600 md:inline-flex"
+      >
+        <LandingIcon name="whatsapp" class="h-4 w-4" />
+        {primaryCtaLabel}
+      </a>
+    </div>
+  </div>
+</header>

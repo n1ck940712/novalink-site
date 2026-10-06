@@ -15,6 +15,7 @@ interface Props {
   basePath?: string;
   primaryCtaLabel: string;
   primaryCtaHref: string;
+  mainClass?: string;
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   basePath = '/atome',
   primaryCtaLabel,
   primaryCtaHref,
+  mainClass = 'pb-10 sm:pb-12',
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.defaultTitle;
@@ -93,13 +95,15 @@ const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).toString();
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <AtomeLandingHeader
-      language={language}
-      basePath={basePath}
-      primaryCtaLabel={primaryCtaLabel}
-      primaryCtaHref={primaryCtaHref}
-    />
-    <main id="main-content" class="pb-10 sm:pb-12">
+    <slot name="header">
+      <AtomeLandingHeader
+        language={language}
+        basePath={basePath}
+        primaryCtaLabel={primaryCtaLabel}
+        primaryCtaHref={primaryCtaHref}
+      />
+    </slot>
+    <main id="main-content" class={mainClass}>
       <slot />
     </main>
     <AtomeLandingFooter language={language} />
