@@ -35,10 +35,14 @@ const {
 const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.defaultTitle;
 const canonicalUrl = new URL(canonicalPath ?? Astro.url.pathname, siteConfig.siteUrl).toString();
 const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).toString();
+const ogLocale = language === 'en' ? 'en_US' : 'ms_MY';
+const languageCheck = basePath === '/atome-2' || basePath === '/atome-3';
+const alternateBm = new URL(basePath, siteConfig.siteUrl).toString();
+const alternateEn = new URL(`${basePath}/en`, siteConfig.siteUrl).toString();
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-lp-base={basePath} data-lp-lang={language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,7 +59,16 @@ const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).toString();
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
-    <meta property="og:locale" content={siteConfig.locale} />
+    <meta property="og:locale" content={ogLocale} />
+    {
+      languageCheck && (
+        <>
+          <link rel="alternate" hreflang="ms" href={alternateBm} />
+          <link rel="alternate" hreflang="en" href={alternateEn} />
+          <link rel="alternate" hreflang="x-default" href={alternateBm} />
+        </>
+      )
+    }
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
@@ -89,6 +102,15 @@ const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).toString();
 
         return false;
       }
+
+      function gtag_report_whatsapp(cta) {
+        gtag('event', 'whatsapp_click', {
+          cta_id: cta || 'unknown',
+          page_path: location.pathname,
+          language: document.documentElement.dataset.lpLang || '',
+        });
+        gtag_report_conversion();
+      }
     </script>
 
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -103,9 +125,103 @@ const ogImageUrl = new URL(ogImage, siteConfig.siteUrl).toString();
         primaryCtaHref={primaryCtaHref}
       />
     </slot>
+    {
+      languageCheck && (
+        <div id="lp-lang-suggest" hidden class="border-b border-brand-200 bg-brand-50" role="region" aria-label="Language suggestion">
+          <div class="container-shell flex flex-wrap items-center gap-x-3 gap-y-2 py-2.5">
+            <p class="min-w-0 flex-1 text-sm leading-snug text-slate-800" data-lang-suggest-copy></p>
+            <a
+              data-lang-suggest-go
+              class="inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-slate-950 px-4 text-sm font-semibold text-white"
+              href={language === 'en' ? basePath : `${basePath}/en`}
+            ></a>
+            <button
+              type="button"
+              data-lang-suggest-dismiss
+              class="inline-flex h-11 shrink-0 items-center justify-center px-2 text-sm font-medium text-slate-600"
+            ></button>
+          </div>
+        </div>
+      )
+    }
     <main id="main-content" class={mainClass}>
       <slot />
     </main>
     <AtomeLandingFooter language={language} />
+    {
+      languageCheck && (
+        <script is:inline>
+          (function () {
+            var root = document.documentElement;
+            var base = root.dataset.lpBase || '';
+            if (base !== '/atome-2' && base !== '/atome-3') return;
+
+            var current = root.dataset.lpLang === 'en' ? 'en' : 'bm';
+            var key = 'nl-atome-lang';
+            var bar = document.getElementById('lp-lang-suggest');
+
+            function pathFor(code) {
+              return (code === 'en' ? base + '/en' : base) + location.search + location.hash;
+            }
+
+            function remember(code) {
+              try {
+                localStorage.setItem(key, code);
+              } catch (e) {}
+            }
+
+            document.querySelectorAll('[data-lang-choice]').forEach(function (link) {
+              link.addEventListener('click', function () {
+                var choice = link.getAttribute('data-lang-choice');
+                if (choice !== 'bm' && choice !== 'en') return;
+                remember(choice);
+                link.setAttribute('href', pathFor(choice));
+              });
+            });
+
+            var saved = null;
+            try {
+              saved = localStorage.getItem(key);
+            } catch (e) {}
+
+            if (saved === 'bm' || saved === 'en') {
+              if (saved !== current) location.replace(pathFor(saved));
+              return;
+            }
+
+            var phone = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+            var target = null;
+            if (current === 'bm' && /^en\b/i.test(phone)) target = 'en';
+            if (current === 'en' && /^(ms|id)\b/i.test(phone)) target = 'bm';
+            if (!target || !bar) return;
+
+            var copy = bar.querySelector('[data-lang-suggest-copy]');
+            var go = bar.querySelector('[data-lang-suggest-go]');
+            var dismiss = bar.querySelector('[data-lang-suggest-dismiss]');
+            if (!copy || !go || !dismiss) return;
+
+            if (target === 'en') {
+              copy.textContent = 'Your phone is set to English.';
+              go.textContent = 'View in English';
+              dismiss.textContent = 'Not now';
+            } else {
+              copy.textContent = 'Telefon anda dalam Bahasa Melayu.';
+              go.textContent = 'Lihat dalam BM';
+              dismiss.textContent = 'Bukan sekarang';
+            }
+
+            go.setAttribute('href', pathFor(target));
+            go.addEventListener('click', function () {
+              remember(target);
+            });
+            dismiss.addEventListener('click', function () {
+              remember(current);
+              bar.hidden = true;
+            });
+            bar.hidden = false;
+          })();
+        </script>
+      )
+    }
   </body>
 </html>

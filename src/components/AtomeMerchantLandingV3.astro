@@ -1,0 +1,1015 @@
+---
+import '@fontsource/sora/latin-400.css';
+import '@fontsource/sora/latin-600.css';
+import '@fontsource/space-grotesk/latin-600.css';
+import '@fontsource/space-grotesk/latin-700.css';
+import AtomeLandingLayout from '../layouts/AtomeLandingLayout.astro';
+import AtomeLandingHeaderV2 from './AtomeLandingHeaderV2.astro';
+import LandingIcon from './LandingIcon.astro';
+import { siteConfig } from '../config/site';
+
+interface Props {
+  language?: 'bm' | 'en';
+}
+
+const { language = 'bm' } = Astro.props;
+const basePath = '/atome-3';
+
+const content = {
+  bm: {
+    metaTitle: 'Daftar sebagai merchant Atome',
+    metaDescription:
+      'Daftar sebagai merchant Atome di Malaysia. Novalink semak kelayakan, terangkan dokumen yang perlu, dan bantu sampai onboarding. Tiada yuran setup.',
+    whatsappMessage:
+      'Hi Novalink, saya nak daftar sebagai merchant Atome.\n\nNama bisnes:\nJenis bisnes:\nLokasi:',
+    headerCta: 'Daftar',
+    stickyCta: 'Daftar sebagai merchant',
+    hero: {
+      eyebrow: 'Untuk pemilik bisnes di Malaysia',
+      headline: 'Daftar sebagai merchant Atome.',
+      highlight: 'Kami bantu siap prosesnya.',
+      subheadline:
+        'Pelanggan bayar 3 kali tanpa faedah. Kami semak kelayakan, senaraikan dokumen, dan bantu sampai onboarding selesai.',
+      audience: 'Halaman ini untuk pemilik bisnes yang nak daftar akaun merchant.',
+      primaryCta: 'Daftar melalui WhatsApp',
+      secondaryCta: 'Lihat cara daftar',
+      ctaNote: 'Terus ke WhatsApp. Mesej sudah disediakan.',
+      feeSetup: 'RM0 yuran setup',
+      feeMonthly: 'RM0 yuran bulanan',
+      feeRate: '6% + RM1 setiap transaksi',
+      disclosure: 'Novalink bukan sebahagian daripada Atome. Kelulusan akhir tertakluk pada semakan Atome.',
+      imageAlt: 'Pelanggan bayar guna app Atome di kaunter kedai',
+      badgeQr: 'Bayar guna QR',
+      badgeCheck: 'Semakan awal percuma',
+      badgeCheckSub: 'melalui WhatsApp',
+    },
+    scene: {
+      imageAlt: 'Staf kedai layan pelanggan yang tunjuk skrin Atome di kaunter',
+      caption: 'Pelanggan bayar dengan Atome di kaunter. Kedai guna QR, tanpa mesin tambahan.',
+    },
+    whyNovalink: {
+      eyebrow: 'Kenapa melalui Novalink',
+      title: 'Tahu apa yang Atome perlukan, sebelum anda mohon.',
+      lead: 'Kami bukan pasukan Atome. Kami bantu merchant sediakan maklumat yang betul supaya proses semakan lebih lancar.',
+      items: [
+        {
+          icon: 'shield-check',
+          title: 'Semakan kelayakan awal',
+          body: 'Kami semak bisnes anda dulu: pendaftaran, signboard, cashier counter atau checkout page. Anda tahu apa yang kurang sebelum mohon.',
+        },
+        {
+          icon: 'clipboard-check',
+          title: 'Senarai dokumen yang jelas',
+          body: 'Kami beritahu apa yang perlu disediakan, seperti SSM, MyKad dan penyata bank, supaya tak perlu berulang-alik.',
+        },
+        {
+          icon: 'message-circle',
+          title: 'Semua dalam satu chat WhatsApp',
+          body: 'Tanya soalan, hantar dokumen dan dapat update dalam satu chat, dari enquiry sampai kontrak.',
+        },
+      ],
+    },
+    whyAtome: {
+      eyebrow: 'Kenapa Atome',
+      title: 'Beri pelanggan cara bayar yang lebih mudah.',
+      lead: 'Atome ialah pilihan Buy Now Pay Later (BNPL). Pelanggan buat bayaran pertama semasa beli, dan baki dijadualkan dalam app Atome.',
+      items: [
+        {
+          icon: 'credit-card',
+          title: 'Tak perlu credit card',
+          body: 'Ramai pelanggan, terutamanya golongan muda, tak ada credit card. Atome beri mereka pilihan ansuran melalui app.',
+        },
+        {
+          icon: 'calendar',
+          title: '3 kali bayaran tanpa faedah',
+          body: 'Bila bayaran boleh dipecahkan, pelanggan biasanya lebih selesa teruskan pembelian yang lebih besar.',
+        },
+        {
+          icon: 'megaphone',
+          title: 'Dipaparkan dalam app Atome',
+          body: 'Merchant berpeluang dapat visibility dalam app Atome, termasuk kempen atau voucher tertentu.',
+        },
+        {
+          icon: 'wallet',
+          title: 'Atome uruskan bayaran balik',
+          body: 'Kutipan ansuran daripada pelanggan diuruskan sepenuhnya oleh Atome.',
+        },
+      ],
+      pricing: {
+        label: 'Yuran merchant',
+        items: [
+          { prefix: 'RM', value: '0', label: 'Setup fee' },
+          { prefix: 'RM', value: '0', label: 'Yuran bulanan' },
+        ],
+        body: 'Hanya caj MDR bagi setiap transaksi. Struktur biasa untuk merchant yang kami uruskan ialah 6% + RM1 setiap transaksi.',
+        note: 'Merchant dengan GMV tinggi atau banyak cawangan mungkin boleh runding kadar lebih rendah. Terma akhir disahkan semasa onboarding.',
+        cta: 'Tanya tentang yuran',
+      },
+    },
+    process: {
+      eyebrow: 'Cara daftar',
+      title: 'Cara daftar, dari WhatsApp sampai kontrak.',
+      lead: 'Biasanya sehingga 2 minggu sebelum kontrak sedia untuk ditandatangani, bergantung pada dokumen dan semakan Atome.',
+      steps: [
+        {
+          title: 'WhatsApp kami',
+          body: 'Hantar nama bisnes, jenis bisnes dan lokasi. Mesej sudah disediakan untuk anda.',
+        },
+        {
+          title: 'Semakan awal',
+          body: 'Kami semak kesesuaian bisnes anda dan terangkan apa yang perlu disediakan.',
+        },
+        {
+          title: 'Sediakan dokumen',
+          body: 'Kami bantu susun dokumen dan maklumat untuk semakan Atome.',
+        },
+        {
+          title: 'Onboarding & kontrak',
+          body: 'Atome buat keputusan akhir. Kami bantu sampai onboarding selesai.',
+        },
+      ],
+    },
+    fit: {
+      eyebrow: 'Sesuai untuk',
+      title: 'Bisnes yang biasa kami bantu',
+      body: 'Kedai fizikal atau online, terutamanya bila harga barang atau servis agak tinggi dan ansuran boleh bantu pelanggan buat keputusan.',
+      categories: [
+        'Telefon & elektronik',
+        'Kecantikan & estetik',
+        'Klinik & pergigian',
+        'Perabot & perkakas rumah',
+        'Fesyen & barang kemas',
+        'Automotif & aksesori',
+        'Pendidikan & kursus',
+        'Kedai online',
+      ],
+      requirementsTitle: 'Syarat biasa Atome',
+      requirements: [
+        { text: 'Bisnes berdaftar di Malaysia (SSM)' },
+        { text: 'Signboard kedai yang proper, bukan sekadar banner', tag: 'Kedai fizikal' },
+        { text: 'Cashier counter', tag: 'Kedai fizikal' },
+        { text: 'Checkout page yang berfungsi', tag: 'Online' },
+        { text: 'Senarai produk atau SKU, kalau diminta' },
+      ],
+      requirementsNote: 'Tak pasti bisnes anda layak?',
+      requirementsCta: 'Kami boleh semak dulu',
+    },
+    faq: {
+      eyebrow: 'Soalan lazim',
+      title: 'Ada soalan lain?',
+      body: 'WhatsApp kami dan kami terangkan dengan lebih lanjut.',
+      cta: 'Tanya di WhatsApp',
+      items: [
+        {
+          question: 'Adakah Novalink sebahagian daripada Atome?',
+          answer:
+            'Bukan. Novalink bantu uruskan enquiry merchant dan panduan onboarding. Kami bukan pasukan dalaman Atome.',
+        },
+        {
+          question: 'Enquiry ini jamin kelulusan?',
+          answer: 'Tidak. Enquiry awal tak jamin kelulusan. Keputusan akhir di pihak Atome selepas semakan.',
+        },
+        {
+          question: 'Saya perlu hardware khas atau integration?',
+          answer:
+            'Tak semestinya. Untuk kedai fizikal, Atome guna pembayaran secara QR. Untuk kedai online, integration bergantung pada platform dan saluran jualan anda.',
+        },
+        {
+          question: 'Macam mana kalau saya jalankan kedai online?',
+          answer:
+            'Boleh, tapi laman anda perlu ada checkout page yang proper. Dalam sesetengah kes, Atome mungkin minta screenshot atau live demo semasa assessment.',
+        },
+        {
+          question: 'Boleh ke dapat kadar lebih rendah daripada 6%?',
+          answer:
+            'Boleh, dalam sesetengah keadaan. Merchant dengan GMV tinggi, banyak cawangan, atau jenama yang kuat berkemungkinan boleh runding kadar yang lebih baik dengan Atome.',
+        },
+        {
+          question: 'Macam mana kalau pelanggan tak bayar balik kepada Atome?',
+          answer:
+            'Bayaran balik pelanggan diuruskan sepenuhnya oleh Atome. Aliran settlement dan terma berkaitan akan dijelaskan kepada merchant semasa onboarding.',
+        },
+        {
+          question: 'Atome akan minta product list?',
+          answer: 'Kadang-kadang, terutamanya semasa assessment. Elok sediakan SKU atau product list lebih awal.',
+        },
+        {
+          question: 'Macam mana kalau bisnes saya dalam kategori berisiko tinggi?',
+          answer:
+            'Semakan mungkin ambil masa lebih lama. Atome mungkin minta dokumen atau kelulusan tambahan bergantung pada kategori bisnes.',
+        },
+      ],
+    },
+    testimonials: {
+      eyebrow: 'Merchant yang sudah live',
+      title: 'Mereka sudah tawarkan Atome.',
+      lead: 'Ada yang di laman web, ada yang di kedai.',
+      onlineHeading: 'Di laman web',
+      storeHeading: 'Di kedai',
+      linkLabel: 'Lihat laman web',
+      more: 'dan banyak lagi...',
+      items: [
+        {
+          name: 'Baterihub',
+          detail: 'Peruncit bateri kereta',
+          url: 'https://baterihub.com/',
+        },
+        {
+          name: 'Polar Plunge',
+          detail: 'Cold plunge',
+          url: 'https://polarplungemy.com/',
+        },
+        {
+          name: 'Cera Jewels',
+          detail: 'Barang kemas emas dan perak',
+          url: 'https://www.cera.my/',
+        },
+        {
+          name: 'Thomas Chan Shoes',
+          detail: 'Kasut ortotik',
+          url: 'https://www.thomaschan.co/',
+        },
+        {
+          name: 'HNNVELLA',
+          detail: 'Hijab',
+          url: 'https://hnnvella.com/',
+        },
+        {
+          name: 'Uji Fesyen',
+          detail: 'Fesyen dan batik',
+          url: 'https://ujifesyen.com/',
+        },
+        {
+          name: 'HUB',
+          detail: 'Streetwear',
+          url: 'https://hubconceptstore.com/',
+        },
+        {
+          name: 'Spring Health',
+          detail: 'Probiotik dan suplemen',
+          url: 'https://springhealthofficial.com/',
+        },
+        {
+          name: 'Brownskin Beaute',
+          detail: 'Solek',
+          url: 'https://www.brownskinbeaute.com/',
+        },
+      ],
+      stores: [
+        {
+          name: 'Dr Kamsiah Dental Specialist Clinic',
+          detail: 'Klinik pergigian · TTDI',
+        },
+        {
+          name: 'Sentul Optical',
+          detail: 'Kedai optik · Sentul',
+        },
+        {
+          name: 'Elara Furniture',
+          detail: 'Perabot · Sungai Buloh',
+        },
+        {
+          name: 'Rejuve Clinic',
+          detail: 'Kecantikan · Kuala Lumpur',
+        },
+        {
+          name: 'Klinik Mediviron Grand Subang',
+          detail: 'Klinik · Subang Jaya',
+        },
+        {
+          name: 'Kedai Emas GDORA',
+          detail: 'Kedai emas · Bayan Baru',
+        },
+      ],
+    },
+    finalCta: {
+      title: 'Daftar merchant Atome hari ini.',
+      body: 'Hantar nama bisnes, jenis bisnes dan lokasi. Kami buat semakan awal dan terangkan langkah seterusnya.',
+      cta: 'Daftar melalui WhatsApp',
+      disclosure:
+        'Novalink bantu uruskan enquiry merchant dan panduan onboarding. Kami bukan pasukan dalaman Atome. Kelayakan dan kelulusan akhir bergantung pada semakan dan keperluan Atome.',
+    },
+  },
+  en: {
+    metaTitle: 'Register as an Atome merchant',
+    metaDescription:
+      'Register as an Atome merchant in Malaysia. Novalink checks your eligibility, explains the documents you need, and supports you through onboarding. No setup fee.',
+    whatsappMessage:
+      'Hi Novalink, I want to register as an Atome merchant.\n\nBusiness name:\nBusiness type:\nLocation:',
+    headerCta: 'Register',
+    stickyCta: 'Register as a merchant',
+    hero: {
+      eyebrow: 'For business owners in Malaysia',
+      headline: 'Register as an Atome merchant.',
+      highlight: 'We help you complete the process.',
+      subheadline:
+        'Customers pay in 3 interest-free instalments. We check your eligibility, list the documents, and support you until onboarding is done.',
+      audience: 'This page is for business owners registering a merchant account.',
+      primaryCta: 'Register on WhatsApp',
+      secondaryCta: 'See how to register',
+      ctaNote: 'Opens WhatsApp with a ready-made message.',
+      feeSetup: 'RM0 setup fee',
+      feeMonthly: 'RM0 monthly fee',
+      feeRate: '6% + RM1 per transaction',
+      disclosure: 'Novalink is not part of Atome. Final approval is subject to Atome’s review.',
+      imageAlt: 'Customer paying with the Atome app at a store counter',
+      badgeQr: 'Pay by QR',
+      badgeCheck: 'Free initial check',
+      badgeCheckSub: 'via WhatsApp',
+    },
+    scene: {
+      imageAlt: 'Shop staff serving a customer showing the Atome screen at the counter',
+      caption: 'A customer pays with Atome at the counter. The shop uses a QR, with no extra terminal.',
+    },
+    whyNovalink: {
+      eyebrow: 'Why go through Novalink',
+      title: 'Know what Atome needs before you apply.',
+      lead: 'We are not part of Atome. We help merchants prepare the right information so the review goes more smoothly.',
+      items: [
+        {
+          icon: 'shield-check',
+          title: 'Early eligibility check',
+          body: 'We check your business first: registration, signboard, cashier counter or checkout page. You know what is missing before you apply.',
+        },
+        {
+          icon: 'clipboard-check',
+          title: 'A clear document list',
+          body: 'We tell you what to prepare, such as SSM, MyKad and bank statements, so there is less back-and-forth.',
+        },
+        {
+          icon: 'message-circle',
+          title: 'Everything in one WhatsApp chat',
+          body: 'Ask questions, send documents and get updates in one chat, from enquiry to contract.',
+        },
+      ],
+    },
+    whyAtome: {
+      eyebrow: 'Why Atome',
+      title: 'Give customers an easier way to pay.',
+      lead: 'Atome is a Buy Now Pay Later (BNPL) option. Customers make the first payment at purchase, and the rest is scheduled in the Atome app.',
+      items: [
+        {
+          icon: 'credit-card',
+          title: 'No credit card needed',
+          body: 'Many customers, especially younger ones, do not have a credit card. Atome gives them an instalment option through the app.',
+        },
+        {
+          icon: 'calendar',
+          title: '3 interest-free payments',
+          body: 'When payments can be split, customers are usually more comfortable going ahead with bigger purchases.',
+        },
+        {
+          icon: 'megaphone',
+          title: 'Featured in the Atome app',
+          body: 'Merchants may gain visibility in the Atome app, including selected campaigns or vouchers.',
+        },
+        {
+          icon: 'wallet',
+          title: 'Atome handles repayments',
+          body: 'Collecting instalments from customers is handled entirely by Atome.',
+        },
+      ],
+      pricing: {
+        label: 'Merchant fees',
+        items: [
+          { prefix: 'RM', value: '0', label: 'Setup fee' },
+          { prefix: 'RM', value: '0', label: 'Monthly fee' },
+        ],
+        body: 'Only an MDR per transaction. The usual structure for merchants we handle is 6% + RM1 per transaction.',
+        note: 'Merchants with high GMV or multiple branches may be able to negotiate a lower rate. Final terms are confirmed during onboarding.',
+        cta: 'Ask about fees',
+      },
+    },
+    process: {
+      eyebrow: 'How to register',
+      title: 'How to register, from WhatsApp to contract.',
+      lead: 'Usually up to 2 weeks before the contract is ready to sign, depending on your documents and Atome’s review.',
+      steps: [
+        {
+          title: 'WhatsApp us',
+          body: 'Send your business name, business type and location. The message is pre-filled for you.',
+        },
+        {
+          title: 'Initial check',
+          body: 'We check whether your business is a fit and explain what to prepare.',
+        },
+        {
+          title: 'Prepare documents',
+          body: 'We help you put together the documents and details for Atome’s review.',
+        },
+        {
+          title: 'Onboarding & contract',
+          body: 'Atome makes the final decision. We support you until onboarding is complete.',
+        },
+      ],
+    },
+    fit: {
+      eyebrow: 'Good fit for',
+      title: 'Businesses we usually help',
+      body: 'Physical or online stores, especially where prices are higher and instalments help customers decide.',
+      categories: [
+        'Phones & electronics',
+        'Beauty & aesthetics',
+        'Clinics & dental',
+        'Furniture & home appliances',
+        'Fashion & jewellery',
+        'Automotive & accessories',
+        'Education & courses',
+        'Online stores',
+      ],
+      requirementsTitle: 'Typical Atome requirements',
+      requirements: [
+        { text: 'Business registered in Malaysia (SSM)' },
+        { text: 'A proper shop signboard, not just a banner', tag: 'Physical store' },
+        { text: 'A cashier counter', tag: 'Physical store' },
+        { text: 'A working checkout page', tag: 'Online' },
+        { text: 'Product or SKU list, if requested' },
+      ],
+      requirementsNote: 'Not sure if your business qualifies?',
+      requirementsCta: 'We can check first',
+    },
+    faq: {
+      eyebrow: 'FAQ',
+      title: 'Have another question?',
+      body: 'WhatsApp us and we will walk you through it.',
+      cta: 'Ask on WhatsApp',
+      items: [
+        {
+          question: 'Is Novalink part of Atome?',
+          answer:
+            'No. Novalink supports merchant enquiry coordination and onboarding guidance. Novalink is not part of Atome’s internal team.',
+        },
+        {
+          question: 'Does this enquiry guarantee approval?',
+          answer:
+            'No. An initial enquiry does not guarantee approval. Eligibility and approval remain subject to Atome’s review.',
+        },
+        {
+          question: 'Do I need special hardware or integration?',
+          answer:
+            'Not necessarily. For physical stores, Atome uses a QR-based payment flow. For online stores, integration depends on your platform and sales channels.',
+        },
+        {
+          question: 'What if I run an online shop?',
+          answer:
+            'You may still apply, but your site should have a proper checkout page. In some cases, Atome may request screenshots or a live demo during assessment.',
+        },
+        {
+          question: 'Can merchants get a lower rate than 6%?',
+          answer:
+            'Yes, in some cases. Merchants with high GMV, multiple branches, or a strong brand profile may be able to negotiate a better rate with Atome.',
+        },
+        {
+          question: 'What happens if the customer does not pay Atome back?',
+          answer:
+            'Customer repayment is handled under Atome’s own process. Merchant settlement flow and related terms will be clarified during onboarding.',
+        },
+        {
+          question: 'Will Atome ask for my product list?',
+          answer:
+            'Sometimes, especially during assessment. Be ready to provide an SKU or product list if requested.',
+        },
+        {
+          question: 'What if my business is in a higher-risk category?',
+          answer:
+            'This may require a more thorough review. Atome may request additional documents or approvals depending on the business category.',
+        },
+      ],
+    },
+    testimonials: {
+      eyebrow: 'Merchants already live',
+      title: 'They already offer Atome.',
+      lead: 'Some on a website, some in a shop.',
+      onlineHeading: 'On a website',
+      storeHeading: 'In a shop',
+      linkLabel: 'Visit website',
+      more: 'and more...',
+      items: [
+        {
+          name: 'Baterihub',
+          detail: 'Car battery retailer',
+          url: 'https://baterihub.com/',
+        },
+        {
+          name: 'Polar Plunge',
+          detail: 'Cold plunge',
+          url: 'https://polarplungemy.com/',
+        },
+        {
+          name: 'Cera Jewels',
+          detail: 'Gold and silver jewellery',
+          url: 'https://www.cera.my/',
+        },
+        {
+          name: 'Thomas Chan Shoes',
+          detail: 'Orthotic shoes',
+          url: 'https://www.thomaschan.co/',
+        },
+        {
+          name: 'HNNVELLA',
+          detail: 'Hijab',
+          url: 'https://hnnvella.com/',
+        },
+        {
+          name: 'Uji Fesyen',
+          detail: 'Fashion and batik',
+          url: 'https://ujifesyen.com/',
+        },
+        {
+          name: 'HUB',
+          detail: 'Streetwear',
+          url: 'https://hubconceptstore.com/',
+        },
+        {
+          name: 'Spring Health',
+          detail: 'Probiotics and supplements',
+          url: 'https://springhealthofficial.com/',
+        },
+        {
+          name: 'Brownskin Beaute',
+          detail: 'Makeup',
+          url: 'https://www.brownskinbeaute.com/',
+        },
+      ],
+      stores: [
+        {
+          name: 'Dr Kamsiah Dental Specialist Clinic',
+          detail: 'Dental clinic · TTDI',
+        },
+        {
+          name: 'Sentul Optical',
+          detail: 'Optical shop · Sentul',
+        },
+        {
+          name: 'Elara Furniture',
+          detail: 'Furniture · Sungai Buloh',
+        },
+        {
+          name: 'Rejuve Clinic',
+          detail: 'Beauty clinic · Kuala Lumpur',
+        },
+        {
+          name: 'Klinik Mediviron Grand Subang',
+          detail: 'Clinic · Subang Jaya',
+        },
+        {
+          name: 'Kedai Emas GDORA',
+          detail: 'Gold shop · Bayan Baru',
+        },
+      ],
+    },
+    finalCta: {
+      title: 'Register your Atome merchant account today.',
+      body: 'Send your business name, business type and location. We will do an initial check and explain the next steps.',
+      cta: 'Register on WhatsApp',
+      disclosure:
+        'Novalink supports merchant enquiry coordination and onboarding guidance. Novalink is not part of Atome’s internal team. Eligibility and approval remain subject to Atome’s review and requirements.',
+    },
+  },
+} as const;
+
+const t = content[language];
+const pageLang = language === 'bm' ? 'ms' : 'en';
+const whatsappLink = (source: string) =>
+  `https://wa.me/${siteConfig.phoneE164}?text=${encodeURIComponent(`${t.whatsappMessage}\n\n(Ref: ATOME-3 ${source})`)}`;
+
+const ctaPrimary =
+  'inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-brand-500 px-7 text-base font-semibold text-slate-950 shadow-[0_12px_32px_-12px_rgba(245,141,61,0.8)] transition hover:bg-brand-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500';
+const ctaDark =
+  'inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-950 px-6 text-base font-semibold text-white transition hover:bg-slate-800';
+const eyebrowLight = 'inline-flex rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800';
+const eyebrowDark = 'inline-flex rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-brand-200';
+const sectionTitle = 'mt-4 text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl';
+const sectionLead = 'mt-4 text-base leading-relaxed sm:text-lg';
+---
+
+<AtomeLandingLayout
+  title={t.metaTitle}
+  description={t.metaDescription}
+  ogImage="/atome-og.jpg"
+  lang={pageLang}
+  language={language}
+  basePath={basePath}
+  primaryCtaLabel={t.headerCta}
+  primaryCtaHref={whatsappLink('header')}
+  mainClass=""
+  noIndex={true}
+>
+  <AtomeLandingHeaderV2
+    slot="header"
+    language={language}
+    basePath={basePath}
+    primaryCtaLabel={t.headerCta}
+    primaryCtaHref={whatsappLink('header')}
+    trackingCta="header"
+  />
+
+  <section class="relative isolate overflow-hidden bg-slate-950 text-white">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-48 right-[-15%] h-[34rem] w-[34rem] rounded-full bg-brand-500/25 blur-3xl"></div>
+      <div class="absolute -bottom-56 -left-40 h-[30rem] w-[30rem] rounded-full bg-brand-600/15 blur-3xl"></div>
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"
+      >
+      </div>
+    </div>
+
+    <div class="container-shell grid gap-10 pb-12 pt-8 sm:gap-12 sm:pb-16 sm:pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:pb-24 lg:pt-20">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-slate-200">
+          <span class="h-2 w-2 rounded-full bg-brand-500" aria-hidden="true"></span>
+          {t.hero.eyebrow}
+        </p>
+        <h1 class="mt-5 text-[1.875rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          {t.hero.headline}
+          <span class="mt-1 block text-brand-500">{t.hero.highlight}</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">{t.hero.subheadline}</p>
+        <p class="mt-3 max-w-xl text-sm font-medium text-brand-200">{t.hero.audience}</p>
+
+        <div data-sticky-cta-hide class="mt-8 flex flex-col items-start gap-3">
+          <a
+            href={whatsappLink('hero')}
+            onclick="gtag_report_whatsapp('hero')"
+            target="_blank"
+            rel="noopener noreferrer"
+            class={ctaPrimary}
+          >
+            <LandingIcon name="whatsapp" class="h-5 w-5" />
+            {t.hero.primaryCta}
+          </a>
+          <a href="#proses" class="inline-flex h-11 items-center text-sm font-semibold text-slate-200 underline-offset-4 hover:underline">
+            {t.hero.secondaryCta}
+          </a>
+        </div>
+        <p class="mt-3 text-sm text-slate-400">{t.hero.ctaNote}</p>
+        <p class="mt-6 max-w-xl border-t border-white/10 pt-5 text-sm leading-relaxed text-slate-300">
+          <span class="whitespace-nowrap font-semibold text-white">{t.hero.feeSetup}</span>
+          <span class="mx-1.5 text-slate-500" aria-hidden="true">·</span>
+          <span class="whitespace-nowrap font-semibold text-white">{t.hero.feeMonthly}</span>
+          <span class="mx-1.5 text-slate-500" aria-hidden="true">·</span>
+          <span class="whitespace-nowrap font-semibold text-white">{t.hero.feeRate}</span>
+        </p>
+        <p class="mt-4 text-sm leading-relaxed text-slate-400">{t.hero.disclosure}</p>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-lg lg:max-w-none">
+        <div class="overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)] ring-1 ring-white/10">
+          <img
+            src="/atome-hero-retail.jpeg"
+            alt={t.hero.imageAlt}
+            width="1197"
+            height="887"
+            loading="eager"
+            fetchpriority="high"
+            class="aspect-[4/3] w-full object-cover"
+          />
+        </div>
+        <div class="absolute -right-2 top-5 flex items-center gap-2 rounded-2xl bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-950 shadow-xl sm:-right-5">
+          <LandingIcon name="qr-code" class="h-5 w-5 text-brand-600" />
+          {t.hero.badgeQr}
+        </div>
+        <div class="absolute -left-2 bottom-5 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl sm:-left-6">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white">
+            <LandingIcon name="whatsapp" class="h-5 w-5" />
+          </span>
+          <span>
+            <span class="block text-sm font-semibold text-slate-950">{t.hero.badgeCheck}</span>
+            <span class="block text-xs text-slate-500">{t.hero.badgeCheckSub}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proses" class="scroll-mt-28 bg-slate-50 py-12 sm:py-20">
+    <div class="container-shell">
+      <div class="max-w-2xl">
+        <p class={eyebrowLight}>{t.process.eyebrow}</p>
+        <h2 class={`${sectionTitle} text-slate-950`}>{t.process.title}</h2>
+        <p class={`${sectionLead} text-slate-600`}>{t.process.lead}</p>
+      </div>
+      <ol class="mt-8 grid gap-0 md:mt-12 md:grid-cols-4 md:gap-8">
+        {
+          t.process.steps.map((step, index) => (
+            <li class="relative flex gap-5 pb-8 last:pb-0 md:flex-col md:gap-0 md:pb-0">
+              {index < t.process.steps.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  class="absolute bottom-2 left-6 top-14 w-px bg-slate-200 md:bottom-auto md:left-16 md:right-[-1rem] md:top-6 md:h-px md:w-auto"
+                />
+              )}
+              <span class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-950 font-display text-lg font-bold text-white">
+                {index + 1}
+              </span>
+              <div class="pt-2.5 md:pt-6">
+                <h3 class="text-xl font-semibold text-slate-950">{step.title}</h3>
+                <p class="mt-2 text-base leading-relaxed text-slate-600">{step.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="bg-white py-12 sm:py-24">
+    <div class="container-shell">
+      <div class="max-w-2xl">
+        <p class={eyebrowLight}>{t.whyNovalink.eyebrow}</p>
+        <h2 class={`${sectionTitle} text-slate-950`}>{t.whyNovalink.title}</h2>
+        <p class={`${sectionLead} text-slate-600`}>{t.whyNovalink.lead}</p>
+      </div>
+      <div class="mt-8 grid gap-7 md:mt-12 md:grid-cols-3 md:gap-5">
+        {
+          t.whyNovalink.items.map((item) => (
+            <article class="flex gap-4 md:flex-col md:gap-0 md:rounded-3xl md:border md:border-slate-200 md:bg-slate-50 md:p-7">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-500 text-slate-950">
+                <LandingIcon name={item.icon} class="h-6 w-6" />
+              </span>
+              <div class="md:mt-6">
+                <h3 class="text-xl font-semibold text-slate-950">{item.title}</h3>
+                <p class="mt-2 text-base leading-relaxed text-slate-600">{item.body}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white pb-12 sm:pb-20">
+    <div class="container-shell">
+      <figure>
+        <img
+          src="/atome-counter-service.jpg"
+          alt={t.scene.imageAlt}
+          width="1600"
+          height="1200"
+          loading="lazy"
+          class="aspect-[4/3] w-full rounded-[2rem] object-cover"
+        />
+        <figcaption class="mt-3 text-sm leading-relaxed text-slate-500">{t.scene.caption}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="relative isolate overflow-hidden bg-slate-950 py-12 text-white sm:py-24">
+    <div aria-hidden="true" class="pointer-events-none absolute -right-40 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-brand-500/15 blur-3xl"></div>
+    <div class="container-shell grid grid-cols-1 gap-12 lg:grid-cols-[1.35fr_1fr] lg:items-start lg:gap-16">
+      <div class="min-w-0">
+        <p class={eyebrowDark}>{t.whyAtome.eyebrow}</p>
+        <h2 class={`${sectionTitle} text-white`}>{t.whyAtome.title}</h2>
+        <p class={`${sectionLead} max-w-2xl text-slate-300`}>{t.whyAtome.lead}</p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-8">
+          {
+            t.whyAtome.items.map((item) => (
+              <div class="flex flex-col gap-4 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 sm:flex-row sm:bg-transparent sm:p-0 sm:ring-0">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-brand-500 ring-1 ring-white/10">
+                  <LandingIcon name={item.icon} class="h-5 w-5" />
+                </span>
+                <div>
+                  <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+                  <p class="mt-1.5 text-base leading-relaxed text-slate-300">{item.body}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <aside class="rounded-[2rem] bg-white p-5 text-slate-950 shadow-2xl sm:p-8">
+        <p class={eyebrowLight}>{t.whyAtome.pricing.label}</p>
+        <dl class="mt-5 grid grid-cols-2 gap-3">
+          {
+            t.whyAtome.pricing.items.map((item) => (
+              <div class="flex flex-col-reverse justify-end gap-1 rounded-2xl bg-brand-50 p-3 sm:p-4">
+                <dt class="text-sm text-slate-600">{item.label}</dt>
+                <dd class="font-display text-3xl font-bold text-slate-950 sm:text-4xl">
+                  <span class="mr-1 text-xl font-semibold text-slate-500">{item.prefix}</span>{item.value}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+        <p class="mt-6 text-base leading-relaxed text-slate-700">{t.whyAtome.pricing.body}</p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-500">{t.whyAtome.pricing.note}</p>
+        <a
+          href={whatsappLink('pricing')}
+          onclick="gtag_report_whatsapp('pricing')"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`${ctaDark} mt-6 w-full`}
+        >
+          <LandingIcon name="whatsapp" class="h-5 w-5" />
+          {t.whyAtome.pricing.cta}
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="bg-brand-50 py-12 sm:py-24">
+    <div class="container-shell grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div>
+        <p class={eyebrowLight}>{t.fit.eyebrow}</p>
+        <h2 class={`${sectionTitle} text-slate-950`}>{t.fit.title}</h2>
+        <p class={`${sectionLead} text-slate-700`}>{t.fit.body}</p>
+        <ul class="mt-8 flex flex-wrap gap-2.5">
+          {
+            t.fit.categories.map((category) => (
+              <li class="rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-medium text-slate-800">
+                {category}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="rounded-[2rem] bg-white p-6 shadow-[0_24px_60px_-30px_rgba(141,63,10,0.35)] sm:p-9">
+        <h3 class="text-2xl font-bold text-slate-950">{t.fit.requirementsTitle}</h3>
+        <ul class="mt-4 divide-y divide-slate-100">
+          {
+            t.fit.requirements.map((requirement) => (
+              <li class="flex items-start gap-3 py-3">
+                <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                  <LandingIcon name="check" class="h-4 w-4" />
+                </span>
+                <span class="text-base leading-relaxed text-slate-800">
+                  {requirement.text}
+                  {'tag' in requirement && (
+                    <span class="ml-1.5 inline-flex rounded-full bg-slate-100 px-2.5 py-0.5 align-middle text-xs font-medium text-slate-600">
+                      {requirement.tag}
+                    </span>
+                  )}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="mt-5 flex flex-col gap-4 rounded-2xl bg-slate-50 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-base font-medium text-slate-800">{t.fit.requirementsNote}</p>
+          <a
+            href={whatsappLink('fit')}
+            onclick="gtag_report_whatsapp('fit')"
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`${ctaDark} h-11 shrink-0 px-5 text-sm`}
+          >
+            <LandingIcon name="whatsapp" class="h-4 w-4" />
+            {t.fit.requirementsCta}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-12 sm:py-24">
+    <div class="container-shell">
+      <div class="max-w-2xl">
+        <p class={eyebrowLight}>{t.testimonials.eyebrow}</p>
+        <h2 class={`${sectionTitle} text-slate-950`}>{t.testimonials.title}</h2>
+        <p class={`${sectionLead} text-slate-600`}>{t.testimonials.lead}</p>
+      </div>
+      <h3 class="mt-8 text-sm font-semibold uppercase tracking-wide text-slate-500 md:mt-12">
+        {t.testimonials.onlineHeading}
+      </h3>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          t.testimonials.items.map((item) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col rounded-3xl border border-slate-200 bg-white p-5 transition hover:border-brand-300 hover:bg-brand-50"
+            >
+              <p class="text-lg font-semibold text-slate-950">{item.name}</p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600">{item.detail}</p>
+              <p class="mt-4 text-sm font-semibold text-brand-800 group-hover:text-brand-900">
+                {t.testimonials.linkLabel}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+      <h3 class="mt-10 text-sm font-semibold uppercase tracking-wide text-slate-500">
+        {t.testimonials.storeHeading}
+      </h3>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          t.testimonials.stores.map((item) => (
+            <div class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5">
+              <p class="text-lg font-semibold text-slate-950">{item.name}</p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600">{item.detail}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-6 text-base text-slate-500">{t.testimonials.more}</p>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-12 sm:py-24">
+    <div class="container-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+      <div class="lg:sticky lg:top-24 lg:self-start">
+        <p class={eyebrowLight}>{t.faq.eyebrow}</p>
+        <h2 class={`${sectionTitle} text-slate-950`}>{t.faq.title}</h2>
+        <p class={`${sectionLead} text-slate-600`}>{t.faq.body}</p>
+        <div class="mt-6 hidden md:block">
+          <a href={whatsappLink('faq')} onclick="gtag_report_whatsapp('faq')" target="_blank" rel="noopener noreferrer" class={ctaDark}>
+            <LandingIcon name="whatsapp" class="h-5 w-5" />
+            {t.faq.cta}
+          </a>
+        </div>
+      </div>
+
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        {
+          t.faq.items.map((item) => (
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 text-base font-semibold sm:py-5 text-slate-950 sm:text-lg [&::-webkit-details-marker]:hidden">
+                <span>{item.question}</span>
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition group-open:rotate-180 group-open:bg-brand-500 group-open:text-slate-950">
+                  <LandingIcon name="chevron-down" class="h-5 w-5" />
+                </span>
+              </summary>
+              <p class="pb-6 text-base leading-relaxed text-slate-600 sm:pr-14">{item.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section data-sticky-cta-hide class="relative isolate overflow-hidden bg-brand-500">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_50%_0%,rgba(255,255,255,0.35),transparent_70%)]"
+    >
+    </div>
+    <div class="container-shell py-16 text-center sm:py-24">
+      <h2 class="mx-auto max-w-3xl text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+        {t.finalCta.title}
+      </h2>
+      <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-900">{t.finalCta.body}</p>
+      <a
+        href={whatsappLink('final')}
+        onclick="gtag_report_whatsapp('final')"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-9 inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-slate-950 px-8 text-base font-semibold text-white shadow-xl transition hover:bg-slate-800"
+      >
+        <LandingIcon name="whatsapp" class="h-5 w-5" />
+        {t.finalCta.cta}
+      </a>
+      <p class="mx-auto mt-10 max-w-2xl text-sm leading-relaxed text-slate-900/80">{t.finalCta.disclosure}</p>
+    </div>
+  </section>
+
+  <div
+    data-sticky-cta
+    data-visible="false"
+    inert
+    class="fixed inset-x-0 bottom-0 z-50 translate-y-full border-t border-slate-200 bg-white/95 px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur-md transition-transform duration-300 data-[visible=true]:translate-y-0 md:hidden"
+  >
+    <a
+      href={whatsappLink('sticky')}
+      onclick="gtag_report_whatsapp('sticky')"
+      target="_blank"
+      rel="noopener noreferrer"
+      class={`${ctaPrimary} w-full`}
+    >
+      <LandingIcon name="whatsapp" class="h-5 w-5" />
+      {t.stickyCta}
+    </a>
+  </div>
+</AtomeLandingLayout>
+
+<script>
+  const bar = document.querySelector<HTMLElement>('[data-sticky-cta]');
+  const blockers = document.querySelectorAll('[data-sticky-cta-hide]');
+
+  if (bar && blockers.length > 0) {
+    const inView = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          inView.add(entry.target);
+        } else {
+          inView.delete(entry.target);
+        }
+      }
+      const show = inView.size === 0;
+      bar.dataset.visible = String(show);
+      bar.toggleAttribute('inert', !show);
+    });
+    blockers.forEach((element) => observer.observe(element));
+  }
+</script>
+
+<style>
+  @media (max-width: 767px) {
+    :global(body) {
+      padding-bottom: 5.5rem;
+    }
+  }
+</style>
